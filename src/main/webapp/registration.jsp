@@ -55,7 +55,7 @@
 			</div>
 		
 	<H1 ALIGN="CENTER" style="color: white">Student Registration Form</H1>
-	<form:form method="POST" action="register" modelAttribute="registrationform">
+	<form:form method="POST" action="submitRegistration" modelAttribute="registrationform">
 		<div>
 			<table align="center">
 				<tr>

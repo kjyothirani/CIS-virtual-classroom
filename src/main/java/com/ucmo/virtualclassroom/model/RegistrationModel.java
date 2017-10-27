@@ -1,10 +1,26 @@
 package com.ucmo.virtualclassroom.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "registration")
 public class RegistrationModel {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	@Column(name = "username")
 	private String studentName;
+	@Column(name = "studendid")
 	private String studentID;
+	@Column(name = "emailid")
 	private String emailId;
+	@Column(name = "password")
 	private String password;
 	
 	
@@ -31,6 +47,12 @@ public class RegistrationModel {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 	
