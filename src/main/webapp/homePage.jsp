@@ -26,33 +26,29 @@
 				<ul>
 					
 					<li class="dropdown">
-						<a href="home.html" class="dropbtn">Home</a>
-						<div class="dropdown-content">
-							<a href="about.html">About</a>
-						</div>
+						<a href="home.html" class="dropbtn">Academic Wiki</a>
+						
 					</li>
 					
 					
 					<li class="dropdown">
 					
-						<a href="#" class="dropbtn">Login/Register</a>
-						<div class="dropdown-content">
-							<a href="loginpage.jsp">Login</a>
-							<a href="registration.jsp">Register</a>
-						</div>
+						<a href="#" class="dropbtn">UCMO Platform</a>
+						
 					
 					</li>
 					
 					
 					<li class="dropdown">
-						<a href="contacts.html" class="dropbtn">Contact</a>
+						<a href="contacts.html" class="dropbtn">Virtual Huddle</a>
 						
 					</li>
 					
 					
 				</ul>
 			</div>
-					
+			
+			
 					
 					
 					
