@@ -8,6 +8,47 @@
 		<title>Home Page</title>
 		<link rel="stylesheet" href="/homepage.css">
 		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript">
+		
+		
+		$(function() {
+				
+			 $('.text').hide();
+			   /*  Submit form using Ajax */
+			   $('#submitButton').click(function(e) {
+				   console.log($('form[name=uploadform]'));
+				      
+			      //Prevent default submission of form
+			      e.preventDefault();
+			      
+			      //Remove all errors
+			      $('input').next().remove();
+			 
+			      
+			      $.post({
+			         url : 'submitUpload',
+			         data : $("#uploadform").serialize(),
+			         success : function(res) {
+
+				           console.log(res);
+			            if(res.success){
+			               //Set response
+			           console.log("here");
+			              $('#showMessage').css("display","block");
+			             
+			 
+			            
+			            }else{
+			              //Set error messages
+			             
+			              }
+			          
+			         }
+			      });
+			   });
+			});
+		</script>
 		
 		
 	</head>
@@ -53,18 +94,19 @@
 					
 				</ul>
 			</div>
-		
+	<div id="showMessage" align="center" style="color:green;display:none" >
+				upload is success.
+			</div>		
 	<H1 ALIGN="CENTER" style="color: white">Upload Here</H1>
-	<form:form method="POST" modelAttribute="uploadform">
+	<form:form method="POST" modelAttribute="uploadform" name="uploadform" id="uploadform">
 		<div>
 			<table align="center">
 				<tr>
 					<td><h3 style="color: white">Resource</h3>
 					<td>
-					<td><input type="text" name="resource" />
+					<td><form:input type="text" name="resource" path="resource"/>
 					<td>
 				</tr>
-
 				<tr>
 					<td><h3 style="color: white">Link</h3>
 					<td>
@@ -101,7 +143,7 @@
 					<td><input type="text" name="studentName" />
 					<td>
 				</tr>
-				
+
 
 				
 				<tr>

@@ -16,12 +16,16 @@ import com.ucmo.virtualclassroom.model.LoginSuccess;
 import com.ucmo.virtualclassroom.model.RegistrationModel;
 import com.ucmo.virtualclassroom.model.RegistrationSuccess;
 import com.ucmo.virtualclassroom.service.RegistrationService;
+import com.ucmo.virtualclassroom.service.WikiService;
 
 @RestController
 public class RegistrationController {
 	
 	@Autowired
 	private RegistrationService registrationService;
+	
+	@Autowired
+	private WikiService service;
 	
 	@RequestMapping(value = "/classroom/register", method = RequestMethod.GET)
 	public ModelAndView getDocuments(@ModelAttribute("registrationform") RegistrationModel request) {
@@ -69,7 +73,7 @@ public class RegistrationController {
 			if(isSuccess){
 			mv=new ModelAndView("academicWikiPage");
 			response.setSuccess(isSuccess);
-			mv.addObject("academicList", getUploadDetails());
+			mv.addObject("academicList", service.getWikiList());
 			return mv;
 			}
 		} catch (Exception e) {
@@ -80,32 +84,6 @@ public class RegistrationController {
 		
 		return  mv;
 	}
-	public List<AcademicWikiModel> getUploadDetails(){
-		List<AcademicWikiModel> academicWikiList = new ArrayList<AcademicWikiModel>();
-		
-		AcademicWikiModel ac = new AcademicWikiModel();
-		ac.setResource("w3schools");
-		ac.setLink("www.w3schools.com");
-		ac.setPdf("xxx");
-		ac.setArticleName("Learn Jquery");
-		ac.setDate("10/24/2017");
-		ac.setStudentName("Jyothi Rani");
-		academicWikiList.add(ac);
-		
-		return academicWikiList;
-		
-	}
-	
-	@RequestMapping(value = "/classroom/upload", method = RequestMethod.GET)
-	public ModelAndView  upload() {
-		String resp = null;
-		LoginSuccess response = new LoginSuccess();
-		try {
-			//Save the Request
-		} catch (Exception e) {
-		}
-		response.setSuccess(true);
-		return new ModelAndView("uploadFile", "academicModel", new AcademicWikiModel());
-	}
+
 
 }

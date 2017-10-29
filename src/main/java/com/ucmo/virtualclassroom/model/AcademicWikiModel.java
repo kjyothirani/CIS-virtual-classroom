@@ -1,13 +1,32 @@
 package com.ucmo.virtualclassroom.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="academicwiki")
 public class AcademicWikiModel {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	@Column(name = "resource")
 	public String resource;
+	@Column(name = "link")
 	public String link;
+	@Column(name = "pdfname")
 	public String pdf;
+	@Column(name = "created_date")
 	public String date;
+	@Column(name = "articlename")
 	public String articleName;
+	@Column(name = "studentname")
 	public String studentName;
+	
 	
 	public String getResource() {
 		return resource;
@@ -44,6 +63,12 @@ public class AcademicWikiModel {
 	}
 	public void setStudentName(String studentName) {
 		this.studentName = studentName;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 }
