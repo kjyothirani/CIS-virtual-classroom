@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ucmo.virtualclassroom.model.AcademicWikiModel;
+import com.ucmo.virtualclassroom.model.LoginModel;
+import com.ucmo.virtualclassroom.model.LoginSuccess;
+import com.ucmo.virtualclassroom.model.RegistrationModel;
 import com.ucmo.virtualclassroom.model.Success;
 import com.ucmo.virtualclassroom.service.WikiService;
 @RestController
@@ -40,6 +43,18 @@ public class AcademicWikiController {
 		ModelAndView mav = new ModelAndView("uploadFile");
 		mav.addObject("uploadform", new AcademicWikiModel());
 		return mav;
+	}
+	@RequestMapping(value = "/classroom/academicWiki", method = RequestMethod.POST)
+	public ModelAndView  validatelogin(@ModelAttribute("loginform") LoginModel request) {
+	
+		ModelAndView mv =null;
+		try {
+			mv=new ModelAndView("academicWikiPage");
+			mv.addObject("academicList", service.getWikiList());
+			return mv;
+		} catch (Exception e) {
+		}
+		return mv;
 	}
 	
 	@RequestMapping(value = "/classroom/submitUpload", method = RequestMethod.POST)
