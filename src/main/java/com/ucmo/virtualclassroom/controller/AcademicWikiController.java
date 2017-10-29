@@ -44,7 +44,7 @@ public class AcademicWikiController {
 		mav.addObject("uploadform", new AcademicWikiModel());
 		return mav;
 	}
-	@RequestMapping(value = "/classroom/academicWiki", method = RequestMethod.POST)
+	@RequestMapping(value = "/classroom/academicWiki", method = RequestMethod.GET)
 	public ModelAndView  validatelogin(@ModelAttribute("loginform") LoginModel request) {
 	
 		ModelAndView mv =null;
