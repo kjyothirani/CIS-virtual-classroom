@@ -12,7 +12,24 @@
 		<title>Home Page</title>
 		<link rel="stylesheet" href="/homepage.css">
 
-	
+		<style>
+			.button {
+			background-color: blue;
+			border: none;
+			color: white;
+			padding: 10px 10px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			height:40px;
+			width:150px;
+			align: center;
+			
+			}
+		</style>
 		
 	</head>
 		
@@ -68,19 +85,28 @@
 				</tr>
 				<tr>
 				<c:forEach items="${academicList}" var="academicList">
+				<tr>
+				
  				<td>${academicList.getResource()}</td>
  				<td>${academicList.getLink()}</td>
  				<td>${academicList.getPdf()}</td>
  				<td>${academicList.getDate()}</td>
  				<td>${academicList.getArticleName()}</td>
  				<td>${academicList.getStudentName()}</td>
+ 				</tr>
 				</c:forEach>
 				 
-				  
-				</tr>
+				 </tr> 
+				 
+				 
+				
 			</table>
-					
-					
+			
+			<table align="center">
+				<tr><a href="/classroom/upload" class="button">Upload New</a></tr>
+			</table>
+			
+			
 					
 							
 								

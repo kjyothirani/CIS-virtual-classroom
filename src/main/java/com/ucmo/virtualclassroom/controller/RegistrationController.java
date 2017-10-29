@@ -23,9 +23,9 @@ public class RegistrationController {
 	@Autowired
 	private RegistrationService registrationService;
 	
-	@RequestMapping(value = "/classroom/register", method = RequestMethod.POST)
+	@RequestMapping(value = "/classroom/register", method = RequestMethod.GET)
 	public ModelAndView getDocuments(@ModelAttribute("registrationform") RegistrationModel request) {
-		return new ModelAndView("loginPage", "registrationform", new RegistrationModel());
+		return new ModelAndView("registration", "registrationform", new RegistrationModel());
 	}
 	
 	@RequestMapping(value = "/classroom/submitRegistration", method = RequestMethod.POST)
@@ -94,6 +94,18 @@ public class RegistrationController {
 		
 		return academicWikiList;
 		
+	}
+	
+	@RequestMapping(value = "/classroom/upload", method = RequestMethod.GET)
+	public ModelAndView  upload() {
+		String resp = null;
+		LoginSuccess response = new LoginSuccess();
+		try {
+			//Save the Request
+		} catch (Exception e) {
+		}
+		response.setSuccess(true);
+		return new ModelAndView("uploadFile", "academicModel", new AcademicWikiModel());
 	}
 
 }

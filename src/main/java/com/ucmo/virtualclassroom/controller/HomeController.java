@@ -16,17 +16,7 @@ import com.ucmo.virtualclassroom.model.AcademicWikiModel;
 @Controller
 public class HomeController {
 	
-	@RequestMapping(value = "/classroom/login", method = RequestMethod.GET)
-	public String login(HttpServletRequest request, HttpServletResponse response) {
-	
-		return "login";
-	}
-	
-	@RequestMapping(value = "/classroom/register", method = RequestMethod.GET)
-	public String registration(HttpServletRequest request, HttpServletResponse response) {
-	
-		return "registration";
-	}
+
 	
 	
 	
