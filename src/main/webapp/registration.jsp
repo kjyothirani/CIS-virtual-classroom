@@ -7,6 +7,45 @@
 	
 		<title>Home Page</title>
 		<link rel="stylesheet" href="/homepage.css">
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript">
+		
+		
+		$(function() {
+				
+			 $('.text').hide();
+			   /*  Submit form using Ajax */
+			   $('#submitButton').click(function(e) {
+			   
+			      //Prevent default submission of form
+			      e.preventDefault();
+			      
+			      //Remove all errors
+			      $('input').next().remove();
+			      
+			      $.post({
+			         url : 'submitRegistration',
+			         data : $('form[name=registrationform]'),
+			         success : function(res) {
+			        	 
+			            if(res.success){
+			               //Set response
+			           console.log("here");
+			              $('#showMessage').css("display","block");
+			             
+			 
+			            
+			            }else{
+			              //Set error messages
+			             
+			              }
+			          
+			         }
+			      });
+			   });
+			});
+		</script>
 
 	
 		
@@ -38,8 +77,8 @@
 					
 						<a href="#" class="dropbtn">Login/Register</a>
 						<div class="dropdown-content">
-							<a href="loginPage">Login</a>
-							<a href="registration">Register</a>
+							<a href="/classroom/loginPage">Login</a>
+							<a href="/classroom/register">Register</a>
 						</div>
 					
 					</li>
@@ -53,9 +92,11 @@
 					
 				</ul>
 			</div>
-		
+		<div id="showMessage" align="center" style="color:green;display:none" >
+				Registration is success. Please click on login page to <a href="/classroom/loginPage">login</a>
+			</div>
 	<H1 ALIGN="CENTER" style="color: white">Student Registration Form</H1>
-	<form:form method="POST" action="submitRegistration" modelAttribute="registrationform">
+	<form:form method="POST" modelAttribute="registrationform">
 		<div>
 			<table align="center">
 				<tr>
@@ -89,13 +130,15 @@
 
 				
 				<tr>
-					<td><input type="submit" value="register" /></td>
+					<td><input type="submit" id="submitButton" value="register"  /></td>
 				</tr>
 			</table>
-
-
+			
+			
 
 		</div>
 	</form:form>
+	
+	
 </body>
 </html>

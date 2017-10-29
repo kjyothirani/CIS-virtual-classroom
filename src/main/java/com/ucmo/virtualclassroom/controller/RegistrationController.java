@@ -29,7 +29,7 @@ public class RegistrationController {
 	}
 	
 	@RequestMapping(value = "/classroom/submitRegistration", method = RequestMethod.POST)
-	public ModelAndView submitRegistration(@ModelAttribute("registrationform") RegistrationModel request) {
+	public RegistrationSuccess submitRegistration(@ModelAttribute("registrationform") RegistrationModel request) {
 		ModelAndView mav =new ModelAndView("loginPage", "registrationform", new RegistrationModel());
 		RegistrationSuccess response = new RegistrationSuccess();
 		try {
@@ -39,7 +39,7 @@ public class RegistrationController {
 			response.setSuccess(false);
 		}
 		mav.addObject("response", response);
-		return mav;
+		return response;
 	}
 	
 	
