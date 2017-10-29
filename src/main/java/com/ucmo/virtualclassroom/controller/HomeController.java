@@ -28,11 +28,7 @@ public class HomeController {
 		return "registration";
 	}
 	
-	@RequestMapping(value = "/classroom/loginPage", method = RequestMethod.GET)
-	public String loginPage(HttpServletRequest request, HttpServletResponse response) {
 	
-		return "loginPage";
-	}
 	
 	@RequestMapping(value = "/classroom/academicWiki", method = RequestMethod.GET)
 	public ModelAndView academicWiki(HttpServletRequest request, HttpServletResponse response) {

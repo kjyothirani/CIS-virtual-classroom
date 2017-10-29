@@ -37,7 +37,7 @@
 					
 						<a href="#" class="dropbtn">Login/Register</a>
 						<div class="dropdown-content">
-							<a href="loginpage.jsp">Login</a>
+							<a href="loginPage">Login</a>
 							<a href="registration.jsp">Register</a>
 						</div>
 					

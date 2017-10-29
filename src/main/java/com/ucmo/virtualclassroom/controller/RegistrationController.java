@@ -1,5 +1,8 @@
 package com.ucmo.virtualclassroom.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ucmo.virtualclassroom.model.AcademicWikiModel;
 import com.ucmo.virtualclassroom.model.LoginModel;
 import com.ucmo.virtualclassroom.model.LoginSuccess;
 import com.ucmo.virtualclassroom.model.RegistrationModel;
@@ -40,8 +44,8 @@ public class RegistrationController {
 	
 	
 	
-	@RequestMapping(value = "/classroom/loginPage", method = RequestMethod.POST)
-	public ModelAndView  login(@ModelAttribute("loginform") LoginModel request) {
+	@RequestMapping(value = "/classroom/loginPage", method = RequestMethod.GET)
+	public ModelAndView  login() {
 		String resp = null;
 		LoginSuccess response = new LoginSuccess();
 		try {
@@ -54,14 +58,35 @@ public class RegistrationController {
 	
 	@RequestMapping(value = "/classroom/login", method = RequestMethod.POST)
 	public ModelAndView  validatelogin(@ModelAttribute("loginform") LoginModel request) {
-		String resp = null;
 		LoginSuccess response = new LoginSuccess();
+		RegistrationModel model = new RegistrationModel();
+		model.setStudentID(request.getStudentID());
+		model.setPassword(request.getPassword());
+		boolean isSuccess =false;
 		try {
-			//Save the Request
+			isSuccess=registrationService.validateLogin(model);
 		} catch (Exception e) {
 		}
-		response.setSuccess(true);
-		return new ModelAndView("homePage", "loginform", new LoginModel());
+		response.setSuccess(isSuccess);
+ModelAndView mv=new ModelAndView("academicWikiPage");
+		
+		mv.addObject("academicList", getUploadDetails());
+		return  mv;
+	}
+	public List<AcademicWikiModel> getUploadDetails(){
+		List<AcademicWikiModel> academicWikiList = new ArrayList<AcademicWikiModel>();
+		
+		AcademicWikiModel ac = new AcademicWikiModel();
+		ac.setResource("w3schools");
+		ac.setLink("www.w3schools.com");
+		ac.setPdf("xxx");
+		ac.setArticleName("Learn Jquery");
+		ac.setDate("10/24/2017");
+		ac.setStudentName("Jyothi Rani");
+		academicWikiList.add(ac);
+		
+		return academicWikiList;
+		
 	}
 
 }
