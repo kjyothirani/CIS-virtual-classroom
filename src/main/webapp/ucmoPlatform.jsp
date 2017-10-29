@@ -14,6 +14,25 @@
 		
 		
 		</script>
+		<style>
+			#ucmoplatform{
+			 background-color: blue;
+			}
+			.button {
+			background-color: blue;
+			border: none;
+			color: white;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			height:30px;
+			width:150px;
+			
+			
+		</style>
 		
 		
 	</head>
@@ -40,7 +59,7 @@
 					
 					<li class="dropdown">
 					
-						<a href="#" class="dropbtn">UCMO Platform</a>
+						<a href="platform" id="ucmoplatform" class="dropbtn">UCMO Platform</a>
 						
 					
 					</li>
@@ -56,6 +75,58 @@
 					
 				</ul>
 			</div>
+		<form:form method="POST" modelAttribute="platformForm">
+		<div>
+			<table align="center" cellpadding="10">
+				<tr>
+					<td>Title</td>
+					<td><textarea rows="1" cols="50">What's your programming Question? Be specific</textarea></td>
+				</tr>
+				
+				<tr></tr>
+				<tr>
+					<td>Describe..</td>
+					<td>
+					<textarea rows="8" cols="50">
+				
+					</textarea>
+					</td>
+				</tr>
+
+				<div>	<hr> </div>
+			
+				<tr>
+					<td>Tags:</td>
+				
+					<td><input type="text" name="tags" />
+				</tr>
+				
+				<tr>
+					<td>First Name:</td>
+				
+					<td><input type="text" name="firstname" />
+				</tr>
+				<tr>
+					<td>Last Name:</h3></td>
+				
+					<td><input type="text" name="lastname" /></td>
+					
+				</tr>
+
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				<tr>
+					
+					<td></td>
+				</tr>
+			</table>
+			<div align="center"><input type="submit" style="margin-right:150px;" value="Post your Question" class="button"  /></div>
+			
+
+		</div>
+	</form:form>
+			
 	
 	
 </body>
