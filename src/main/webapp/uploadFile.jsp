@@ -53,7 +53,7 @@
 		
 	</head>
 		
-		<body background ="/Images/vcback.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
+		<body background ="/Images/skulls.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
 		
 		
 		
@@ -68,28 +68,25 @@
 				<ul>
 					
 					<li class="dropdown">
-						<a href="home.html" class="dropbtn">Home</a>
-						<div class="dropdown-content">
-							<a href="about.html">About</a>
-						</div>
-					</li>
-					
-					
-					<li class="dropdown">
-					
-						<a href="#" class="dropbtn">Login/Register</a>
-						<div class="dropdown-content">
-							<a href="/classroom/loginPage">Login</a>
-							<a href="/classroom/register">Register</a>
-						</div>
-					
-					</li>
-					
-					
-					<li class="dropdown">
-						<a href="contacts.html" class="dropbtn">Contact</a>
+						<a href="/classroom/academicWiki" class="dropbtn">Academic Wiki</a>
 						
 					</li>
+					
+					
+					<li class="dropdown">
+					
+						<a href="#" class="dropbtn">UCMO Platform</a>
+						
+					
+					</li>
+					
+					
+					<li class="dropdown">
+						<a href="contacts.html" class="dropbtn">Virtual Huddle</a>
+						
+					</li>
+					
+					
 					
 					
 				</ul>
@@ -97,18 +94,18 @@
 	<div id="showMessage" align="center" style="color:green;display:none" >
 				upload is success.
 			</div>		
-	<H1 ALIGN="CENTER" style="color: white">Upload Here</H1>
+	<H1 ALIGN="CENTER" style="color: black">Upload Here</H1>
 	<form:form method="POST" modelAttribute="uploadform" name="uploadform" id="uploadform">
 		<div>
-			<table align="center">
+			<table align="center" style="color:black">
 				<tr>
-					<td><h3 style="color: white">Resource</h3>
+					<td><h3 style="color: black">Resource</h3>
 					<td>
 					<td><form:input type="text" name="resource" path="resource"/>
 					<td>
 				</tr>
 				<tr>
-					<td><h3 style="color: white">Link</h3>
+					<td><h3 style="color: black">Link</h3>
 					<td>
 					<td><input type="text" name="link" />
 					<td>
@@ -116,14 +113,14 @@
 
 				
 				<tr>
-					<td><h3 style="color: white">PDF:</h3>
+					<td><h3 style="color: black">PDF:</h3>
 					<td>
 					<td><input type="text" name="pdf" />
 					<td>
 				</tr>
 				
 				<tr>
-					<td><h3 style="color: white">Uploaded Date:</h3>
+					<td><h3 style="color: black">Uploaded Date:</h3>
 					<td>
 					<td><input type="text" name="uploadedDate" />
 					<td>
@@ -131,14 +128,14 @@
 				
 				
 				<tr>
-					<td><h3 style="color: white">Article Name:</h3>
+					<td><h3 style="color: black">Article Name:</h3>
 					<td>
 					<td><input type="text" name="articleName" />
 					<td>
 				</tr>
 				
 				<tr>
-					<td><h3 style="color: white">Student Name:</h3>
+					<td><h3 style="color: black">Student Name:</h3>
 					<td>
 					<td><input type="text" name="studentName" />
 					<td>

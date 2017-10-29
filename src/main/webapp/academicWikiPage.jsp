@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="com.ucmo.virtualclassroom.model.*"%>
-<%@ page import="com.ucmo.virtualclassroom.dao.*"%>
+
 <%@ page import="java.util.*"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -24,16 +24,29 @@
 			font-size: 16px;
 			margin: 4px 2px;
 			cursor: pointer;
-			height:40px;
-			width:150px;
+			height:30px;
+			width:100px;
 			align: center;
 			
+			}
+			
+			
+
+			#academicWiki{
+			 background-color: blue;
+			}
+			th{
+				font-size: 18px;
+			}
+			tr {border: thin solid black;}
+			table{
+			  border-collapse: collapse;
 			}
 		</style>
 		
 	</head>
 		
-		<body background ="/Images/vcback.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
+		<body background ="/Images/skulls.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
 		
 		
 		
@@ -48,7 +61,7 @@
 				<ul>
 					
 					<li class="dropdown">
-						<a href="home.html" class="dropbtn">Academic Wiki</a>
+						<a href="home.html" class="dropbtn" id="academicWiki">Academic Wiki</a>
 						
 					</li>
 					
@@ -73,23 +86,25 @@
 			<br/>
 			<br/>
 			
-			<table border="1" align="center" style="color:white">
-			
-				<tr>
-					<td>Resource  </td>
-					<td>Link  </td>
-					<td>PDF  </td>
-					<td>Uploaded Date  </td>
-					<td>Article Name  </td>
-					<td>Student Name  </td>
+			<table border="1" rules="none" align="center"  style="color:black" cellpadding="10" cellspacing="10">
+				<thead>
+				<tr class="border_bottom">
+					<th>Resource  </th>
+					<th>Link  </th>
+					<th>PDF  </th>
+					<th>Uploaded Date  </th>
+					<th>Article Name  </th>
+					<th>Student Name  </th>
 				</tr>
+				</thead>
+				<tbody>
 				<tr>
 				<c:forEach items="${academicList}" var="academicList">
-				<tr>
+				<tr class="border_bottom">
 				
- 				<td>${academicList.getResource()}</td>
- 				<td>${academicList.getLink()}</td>
- 				<td>${academicList.getPdf()}</td>
+ 				<td>  ${academicList.getResource()}</td>
+ 				<td>  ${academicList.getLink()}</td>
+ 				<td>  ${academicList.getPdf()}</td>
  				<td>${academicList.getDate()}</td>
  				<td>${academicList.getArticleName()}</td>
  				<td>${academicList.getStudentName()}</td>
@@ -97,14 +112,15 @@
 				</c:forEach>
 				 
 				 </tr> 
-				 
+				 </tbody>
 				 
 				
 			</table>
+			<br/>
+			<br/>
+			<div align="center"><a href="/classroom/upload" class="button">Upload New</a></div>
+		  
 			
-			<table align="center">
-				<tr><a href="/classroom/upload" class="button">Upload New</a></tr>
-			</table>
 			
 			
 					

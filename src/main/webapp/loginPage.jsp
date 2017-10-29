@@ -13,7 +13,7 @@
 		
 	</head>
 		
-		<body background ="/Images/vcback.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
+		<body background ="/Images/skulls.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
 		
 		
 		
@@ -55,7 +55,7 @@
 				</ul>
 			</div>
 			 <c:if test = "${loginFailure == 'yes'}">
-			 <div id="loginFailure" style="color:red"> The id and/or password is incorrect. Please provide valid credentials.</div>
+			 <div id="loginFailure" align="center" style="color:red"> The id and/or password is incorrect. Please provide valid credentials.</div>
 			 </c:if>
 		
 	<H1 ALIGN="CENTER" style="color: white">Student Login</H1>

@@ -11,7 +11,7 @@
 		
 	</head>
 		
-		<body background ="/Images/vcback.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
+		<body background ="/Images/skulls.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
 		
 		
 		
