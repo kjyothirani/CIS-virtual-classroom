@@ -61,7 +61,7 @@
 				<ul>
 					
 					<li class="dropdown">
-						<a href="home.html" class="dropbtn" id="academicWiki">Academic Wiki</a>
+						<a href="academicWiki" class="dropbtn" id="academicWiki">Academic Wiki</a>
 						
 					</li>
 					
