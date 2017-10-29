@@ -68,7 +68,7 @@
 					
 					<li class="dropdown">
 					
-						<a href="#" class="dropbtn">UCMO Platform</a>
+						<a href="platform" class="dropbtn">UCMO Platform</a>
 						
 					
 					</li>
