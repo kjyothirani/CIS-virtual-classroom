@@ -23,7 +23,7 @@ public class RegistrationServiceImpl implements RegistrationService {
 	@Override
 	public boolean validateLogin(RegistrationModel model) {
 		model=registrationRepository.findByStudentIDAndPassword(model.getStudentID(), model.getPassword());
-		if(model.getId() !=null)
+		if(model!=null && model.getId() !=null)
 		return true;
 		else 
 			return false;

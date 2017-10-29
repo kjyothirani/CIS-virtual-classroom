@@ -62,15 +62,22 @@ public class RegistrationController {
 		RegistrationModel model = new RegistrationModel();
 		model.setStudentID(request.getStudentID());
 		model.setPassword(request.getPassword());
+		ModelAndView mv;
 		boolean isSuccess =false;
 		try {
 			isSuccess=registrationService.validateLogin(model);
+			if(isSuccess){
+			mv=new ModelAndView("academicWikiPage");
+			response.setSuccess(isSuccess);
+			mv.addObject("academicList", getUploadDetails());
+			return mv;
+			}
 		} catch (Exception e) {
 		}
-		response.setSuccess(isSuccess);
-ModelAndView mv=new ModelAndView("academicWikiPage");
+		mv=new ModelAndView("loginPage");
+		mv.addObject("loginform", new LoginModel());
+		mv.addObject("loginFailure", "yes");
 		
-		mv.addObject("academicList", getUploadDetails());
 		return  mv;
 	}
 	public List<AcademicWikiModel> getUploadDetails(){
