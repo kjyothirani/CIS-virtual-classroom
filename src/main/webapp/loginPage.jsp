@@ -13,7 +13,7 @@
 		
 	</head>
 		
-		<body background ="/Images/skulls.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
+		<body background ="/Images/bg.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
 		
 		
 		
@@ -58,13 +58,13 @@
 			 <div id="loginFailure" align="center" style="color:red"> The id and/or password is incorrect. Please provide valid credentials.</div>
 			 </c:if>
 		
-	<H1 ALIGN="CENTER" style="color: white">Student Login</H1>
+	<H1 ALIGN="CENTER" style="color: black">Student Login</H1>
 	<form:form method="POST" action="login" modelAttribute="loginform">
 		<div>
 			<table align="center">
 				
 				<tr>
-					<td><h3 style="color: white">Student ID:</h3>
+					<td><h3 style="color: black">Student ID:</h3>
 					<td>
 					<td><input type="text" name="studentID" />
 					<td>
@@ -73,7 +73,7 @@
 				
 				
 				<tr>
-					<td><h3 style="color: white">Password:</h3>
+					<td><h3 style="color: black">Password:</h3>
 					<td>
 					<td><input type="text" name="password" />
 					<td>

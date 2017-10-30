@@ -36,7 +36,7 @@
 			 background-color: blue;
 			}
 			th{
-				font-size: 18px;
+				font-size: 20px;
 			}
 			tr {border: thin solid black;}
 			table{
@@ -46,7 +46,7 @@
 		
 	</head>
 		
-		<body background ="/Images/skulls.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
+		<body background ="/Images/bg.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
 		
 		
 		
@@ -86,7 +86,7 @@
 			<br/>
 			<br/>
 			
-			<table border="1" rules="none" align="center"  style="color:black" cellpadding="10" cellspacing="10">
+			<table border="1" rules="none" style="color:black" cellpadding="30" cellspacing="40">
 				<thead>
 				<tr class="border_bottom">
 					<th>Resource  </th>
@@ -103,8 +103,8 @@
 				<tr class="border_bottom">
 				
  				<td>  ${academicList.getResource()}</td>
- 				<td>  ${academicList.getLink()}</td>
- 				<td>  ${academicList.getPdf()}</td>
+ 				<td>  <a href="${academicList.getLink()}">${academicList.getLink()}</a></td>
+ 				<td>  <a href="${academicList.getPdf()}">${academicList.getPdf()}</a></td>
  				<td>${academicList.getDate()}</td>
  				<td>${academicList.getArticleName()}</td>
  				<td>${academicList.getStudentName()}</td>

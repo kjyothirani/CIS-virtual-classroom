@@ -51,7 +51,7 @@
 		
 	</head>
 		
-		<body background ="/Images/skulls.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
+		<body background ="/Images/bg.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
 		
 		
 		
@@ -95,19 +95,19 @@
 		<div id="showMessage" align="center" style="color:green;display:none" >
 				Registration is success. Please click on login page to <a href="/classroom/loginPage">login</a>
 			</div>
-	<H1 ALIGN="CENTER" style="color: white">Student Registration Form</H1>
+	<H1 ALIGN="CENTER" style="color: black">Student Registration Form</H1>
 	<form:form method="POST" modelAttribute="registrationform">
 		<div>
 			<table align="center">
 				<tr>
-					<td><h3 style="color: white">Student Name:</h3>
+					<td><h3 style="color: black">Student Name:</h3>
 					<td>
 					<td><input type="text" name="studentName" />
 					<td>
 				</tr>
 
 				<tr>
-					<td><h3 style="color: white">Student ID:</h3>
+					<td><h3 style="color: black">Student ID:</h3>
 					<td>
 					<td><input type="text" name="studentID" />
 					<td>
@@ -115,14 +115,14 @@
 
 				
 				<tr>
-					<td><h3 style="color: white">Email:</h3>
+					<td><h3 style="color: black">Email:</h3>
 					<td>
 					<td><input type="text" name="email" />
 					<td>
 				</tr>
 				
 				<tr>
-					<td><h3 style="color: white">Password:</h3>
+					<td><h3 style="color: black">Password:</h3>
 					<td>
 					<td><input type="text" name="password" />
 					<td>
