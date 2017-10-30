@@ -11,7 +11,42 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript">
 		
-		
+		$(function() {
+			
+			 $('.text').hide();
+			   /*  Submit form using Ajax */
+			   $('#submitButton').click(function(e) {
+				   console.log($('form[name=uploadform]'));
+				      
+			      //Prevent default submission of form
+			      e.preventDefault();
+			      
+			      //Remove all errors
+			      $('input').next().remove();
+			 
+			      
+			      $.post({
+			         url : 'submitDiscussion',
+			         data : $("#platformForm").serialize(),
+			         success : function(res) {
+
+				           console.log(res);
+			            if(res.success){
+			               //Set response
+			           console.log("here");
+			              $('#showMessage').css("display","block");
+			             
+			 
+			            
+			            }else{
+			              //Set error messages
+			             
+			              }
+			          
+			         }
+			      });
+			   });
+			});
 		
 		</script>
 		<style>
@@ -30,8 +65,10 @@
 			cursor: pointer;
 			height:30px;
 			width:150px;
+	
+	
 			
-			
+				
 		</style>
 		
 		
@@ -75,19 +112,23 @@
 					
 				</ul>
 			</div>
+			
+				<div id="showMessage" align="center" style="color:green;display:none" >
+				Discussion is successfully posted.
+			</div>		
 		<form:form method="POST" modelAttribute="platformForm">
 		<div>
 			<table align="center" cellpadding="10">
 				<tr>
 					<td>Title</td>
-					<td><textarea rows="1" cols="50">What's your programming Question? Be specific</textarea></td>
+					<td><textarea name="discussionName" rows="1" cols="50">What's your programming Question? Be specific</textarea></td>
 				</tr>
 				
 				<tr></tr>
 				<tr>
 					<td>Describe..</td>
 					<td>
-					<textarea rows="8" cols="50">
+					<textarea name="discussion" rows="8" cols="50">
 				
 					</textarea>
 					</td>
@@ -104,12 +145,12 @@
 				<tr>
 					<td>First Name:</td>
 				
-					<td><input type="text" name="firstname" />
+					<td><input type="text" name="firstName" />
 				</tr>
 				<tr>
 					<td>Last Name:</h3></td>
 				
-					<td><input type="text" name="lastname" /></td>
+					<td><input type="text" name="lastName" /></td>
 					
 				</tr>
 
@@ -121,7 +162,7 @@
 					<td></td>
 				</tr>
 			</table>
-			<div align="center"><input type="submit" style="margin-right:150px;" value="Post your Question" class="button"  /></div>
+			<div align="center"><input type="submit"  id="submitButton" style="margin-right:150px;" value="Post your Question" class="button"  /></div>
 			
 
 		</div>
