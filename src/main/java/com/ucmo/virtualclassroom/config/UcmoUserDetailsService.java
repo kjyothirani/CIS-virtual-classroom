@@ -16,7 +16,7 @@ public class UcmoUserDetailsService implements UserDetailsService{
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		RegistrationModel model =registrationRepository.findByStudentID(username);
+		RegistrationModel model =registrationRepository.findByUsername(username);
 		return new MyUserPrincipal(model);
 	}
 

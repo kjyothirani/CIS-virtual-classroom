@@ -15,21 +15,20 @@ public class RegistrationModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column(name = "username")
-	private String studentName;
+	private String username;
 	@Column(name = "studendid")
 	private String studentID;
 	@Column(name = "emailid")
 	private String emailId;
 	@Column(name = "password")
 	private String password;
+	@Column(name = "firstname")
+	private String firstname;
+	@Column(name = "lastname")
+	private String lastname;
 	
 	
-	public String getStudentName() {
-		return studentName;
-	}
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
-	}
+	
 	public String getStudentID() {
 		return studentID;
 	}
@@ -53,6 +52,24 @@ public class RegistrationModel {
 	}
 	public void setId(Long id) {
 		this.id = id;
+	}
+	public String getFirstname() {
+		return firstname;
+	}
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+	public String getLastname() {
+		return lastname;
+	}
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	
 	

@@ -139,6 +139,11 @@
  				<td>
  				
  				</tr>
+ 				<tr>
+ 				<td>  ${platformDiscussionList.getFirstName()}     ${platformDiscussionList.getLastName()} ||  ${platformDiscussionList.getUsername()} </td>
+ 			
+ 				
+ 				</tr>
  				<tr><td>--------------------------------------------------------------------------------</td>
  				</tr>
 				</c:forEach>

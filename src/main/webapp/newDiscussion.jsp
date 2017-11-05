@@ -142,17 +142,6 @@
 					<td><input type="text" name="tags" />
 				</tr>
 				
-				<tr>
-					<td>First Name:</td>
-				
-					<td><input type="text" name="firstName" />
-				</tr>
-				<tr>
-					<td>Last Name:</h3></td>
-				
-					<td><input type="text" name="lastName" /></td>
-					
-				</tr>
 
 				<tr></tr>
 				<tr></tr>

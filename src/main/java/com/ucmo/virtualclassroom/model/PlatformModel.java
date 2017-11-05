@@ -30,6 +30,9 @@ public class PlatformModel {
 	@Column(name = "lastname")
 	private String lastName;
 	
+	@Column(name = "username")
+	private String username;
+	
 	@Column(name = "tags")
 	private String tags;
 	
@@ -73,6 +76,14 @@ public class PlatformModel {
 
 	public void setTags(String tags) {
 		this.tags = tags;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 

@@ -26,7 +26,7 @@
 			      
 			      $.post({
 			         url : 'submitRegistration',
-			         data : $('form[name=registrationform]'),
+			         data : $('#registrationform').serialize(),
 			         success : function(res) {
 			        	 
 			            if(res.success){
@@ -100,12 +100,17 @@
 		<div>
 			<table align="center">
 				<tr>
-					<td><h3 style="color: black">Student Name:</h3>
+					<td><h3 style="color: black">User Name:</h3>
 					<td>
-					<td><input type="text" name="studentName" />
+					<td><input type="text" name="username" />
 					<td>
 				</tr>
-
+				<tr>
+					<td><h3 style="color: black">Password:</h3>
+					<td>
+					<td><input type="text" name="password" />
+					<td>
+				</tr>
 				<tr>
 					<td><h3 style="color: black">Student ID:</h3>
 					<td>
@@ -117,17 +122,24 @@
 				<tr>
 					<td><h3 style="color: black">Email:</h3>
 					<td>
-					<td><input type="text" name="email" />
+					<td><input type="text" name="emailId" />
+					<td>
+				</tr>
+				
+
+<tr>
+					<td><h3 style="color: black">First Name:</h3>
+					<td>
+					<td><input type="text" name="firstname" />
 					<td>
 				</tr>
 				
 				<tr>
-					<td><h3 style="color: black">Password:</h3>
+					<td><h3 style="color: black">Last Name:</h3>
 					<td>
-					<td><input type="text" name="password" />
+					<td><input type="text" name="lastname" />
 					<td>
 				</tr>
-
 				
 				<tr>
 					<td><input type="submit" id="submitButton" value="register"  /></td>

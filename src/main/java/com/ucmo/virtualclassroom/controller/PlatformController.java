@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ucmo.virtualclassroom.config.MyUserPrincipal;
 import com.ucmo.virtualclassroom.model.PlatformForm;
 import com.ucmo.virtualclassroom.model.PlatformModel;
 import com.ucmo.virtualclassroom.model.Platformdiscussion;
@@ -73,13 +75,19 @@ public class PlatformController {
 		Success response = new Success();
 		PlatformModel model = new PlatformModel();
 		model.setDiscussionName(request.getDiscussionName());
-		model.setFirstName(request.getFirstName());
-		model.setLastName(request.getLastName());
+		MyUserPrincipal principal = getUser();
+		model.setFirstName(principal.getFirstname());
+		model.setLastName(principal.getLastname());
+		model.setUsername(principal.getUsername());
 		model.setTags(request.getTags());
 		List<Platformdiscussion> list = new ArrayList<>();
 		Platformdiscussion discussion = new Platformdiscussion();
 		discussion.setOrdervalue(1);
 	discussion.setValue(request.getDiscussion());
+	
+	discussion.setFirstName(principal.getFirstname());
+	discussion.setLastName(principal.getLastname());
+	discussion.setUsername(principal.getUsername());
 		list.add(discussion);
 		//model.setPlatformDiscussion(list);
 		try {
@@ -104,6 +112,10 @@ public class PlatformController {
 		discussion.setOrdervalue(model.size()+1);
 		discussion.setPlatformid(request.getId());
 		discussion.setValue(request.getDiscussion());
+		MyUserPrincipal principal = getUser();
+		discussion.setFirstName(principal.getFirstname());
+		discussion.setLastName(principal.getLastname());
+		discussion.setUsername(principal.getUsername());
 		discussion =platformService.savePlatformDiscussion(discussion);
 ModelAndView mv =null;
 model =platformService.getPlatformDiscussion(request.getId());
@@ -115,4 +127,15 @@ model =platformService.getPlatformDiscussion(request.getId());
 		return mv;
 	}
 
+	
+	private MyUserPrincipal getUser()
+	{
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		MyUserPrincipal userData = null;
+		if (principal instanceof MyUserPrincipal)
+		{
+			userData =(MyUserPrincipal) principal;
+		}
+		return userData;
+	}
 }

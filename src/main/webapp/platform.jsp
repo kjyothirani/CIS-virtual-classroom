@@ -96,7 +96,7 @@
  				<td> <a  href="platformDiscussion?id=${platformValue.getId() }"> ${platformValue.getDiscussionName()}</a></td>
  				</tr>
  				<tr>
- 				<td>  ${platformValue.getFirstName()}     ${platformValue.getLastName()}   </td>
+ 				<td>  ${platformValue.getFirstName()}     ${platformValue.getLastName()} ||  ${platformValue.getUsername()} </td>
  				<td>
  				  ${platformValue.getTags()}</td>
  				

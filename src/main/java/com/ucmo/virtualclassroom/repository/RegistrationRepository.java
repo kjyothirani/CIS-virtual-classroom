@@ -12,5 +12,8 @@ public interface RegistrationRepository extends JpaRepository<RegistrationModel,
 	public RegistrationModel findByStudentIDAndPassword(@RequestParam("studentid")String key, @RequestParam("password")String tenant);
 	
 	public RegistrationModel findByStudentID(@RequestParam("studentid")String key);
+	
+	public RegistrationModel findByUsername(@RequestParam("username")String key);
+
 
 }

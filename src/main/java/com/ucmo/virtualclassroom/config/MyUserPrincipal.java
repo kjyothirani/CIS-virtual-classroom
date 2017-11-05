@@ -17,6 +17,12 @@ public class MyUserPrincipal implements UserDetails {
 	public MyUserPrincipal(RegistrationModel user) {
         this.user = user;
     }
+	
+	private String firstname;
+	
+	private String lastname;
+	
+	private String username;
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -34,7 +40,7 @@ public class MyUserPrincipal implements UserDetails {
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		return this.user.getStudentID();
+		return this.user.getUsername();
 	}
 
 	@Override
@@ -59,6 +65,26 @@ public class MyUserPrincipal implements UserDetails {
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
 		return true;
+	}
+
+	public String getFirstname() {
+		return this.user.getFirstname();
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return this.user.getLastname();
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	
 
