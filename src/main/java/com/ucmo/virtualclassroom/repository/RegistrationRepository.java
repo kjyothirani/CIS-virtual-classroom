@@ -10,5 +10,7 @@ import com.ucmo.virtualclassroom.model.RegistrationModel;
 @Repository
 public interface RegistrationRepository extends JpaRepository<RegistrationModel, Long> {
 	public RegistrationModel findByStudentIDAndPassword(@RequestParam("studentid")String key, @RequestParam("password")String tenant);
+	
+	public RegistrationModel findByStudentID(@RequestParam("studentid")String key);
 
 }

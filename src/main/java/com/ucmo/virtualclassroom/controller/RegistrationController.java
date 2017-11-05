@@ -60,22 +60,13 @@ public class RegistrationController {
 		return new ModelAndView("loginPage", "loginform", new LoginModel());
 	}
 	
-	@RequestMapping(value = "/classroom/login", method = RequestMethod.POST)
-	public ModelAndView  validatelogin(@ModelAttribute("loginform") LoginModel request) {
-		LoginSuccess response = new LoginSuccess();
-		RegistrationModel model = new RegistrationModel();
-		model.setStudentID(request.getStudentID());
-		model.setPassword(request.getPassword());
+	@RequestMapping(value = "/classroom/home", method = RequestMethod.GET)
+	public ModelAndView  validatelogin() {
 		ModelAndView mv;
-		boolean isSuccess =false;
 		try {
-			isSuccess=registrationService.validateLogin(model);
-			if(isSuccess){
 			mv=new ModelAndView("academicWikiPage");
-			response.setSuccess(isSuccess);
 			mv.addObject("academicList", service.getWikiList());
 			return mv;
-			}
 		} catch (Exception e) {
 		}
 		mv=new ModelAndView("loginPage");

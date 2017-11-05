@@ -59,7 +59,7 @@
 			 </c:if>
 		
 	<H1 ALIGN="CENTER" style="color: black">Student Login</H1>
-	<form:form method="POST" action="login" modelAttribute="loginform">
+	<form:form method="POST" action="loginPage" modelAttribute="loginform">
 		<div>
 			<table align="center">
 				
