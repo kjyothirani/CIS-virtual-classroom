@@ -93,7 +93,7 @@
 				<c:forEach items="${platformList}" var="platformValue">
 				<tr >
 				
- 				<td> <a href="#" > ${platformValue.getDiscussionName()}</a></td>
+ 				<td> <a  href="platformDiscussion?id=${platformValue.getId() }"> ${platformValue.getDiscussionName()}</a></td>
  				</tr>
  				<tr>
  				<td>  ${platformValue.getFirstName()}     ${platformValue.getLastName()}   </td>
