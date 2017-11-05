@@ -14,34 +14,19 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
-@Entity
-@Table(name="platform")
-public class PlatformModel {
+public class PlatformForm {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(name = "discussionname")
+	
 	private String discussionName;
 	
-	@Column(name = "firstname")
 	private String firstName;
 	
-	@Column(name = "lastname")
 	private String lastName;
 	
-	@Column(name = "tags")
 	private String tags;
 	
-
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
+private String discussion;
 
 	public String getDiscussionName() {
 		return discussionName;
@@ -75,5 +60,20 @@ public class PlatformModel {
 		this.tags = tags;
 	}
 
+	public String getDiscussion() {
+		return discussion;
+	}
+
+	public void setDiscussion(String discussion) {
+		this.discussion = discussion;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 }

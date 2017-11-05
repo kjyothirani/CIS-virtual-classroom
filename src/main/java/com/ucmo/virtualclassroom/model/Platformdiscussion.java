@@ -1,28 +1,26 @@
 package com.ucmo.virtualclassroom.model;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
+@Table(name="platformdiscussion")
 @Entity
-@Table(name="platform")
-public class PlatformModel {
+public class Platformdiscussion {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(name = "discussionname")
-	private String discussionName;
+
+	
+	@Column(name = "ordervalue")
+	private int ordervalue;
+	
+	@Column(name = "value")
+	private String value;
 	
 	@Column(name = "firstname")
 	private String firstName;
@@ -30,11 +28,12 @@ public class PlatformModel {
 	@Column(name = "lastname")
 	private String lastName;
 	
-	@Column(name = "tags")
-	private String tags;
+	@Column(name = "username")
+	private String username;
 	
-
-
+	@Column(name = "platformid")
+	private Long platformid;
+	
 	public Long getId() {
 		return id;
 	}
@@ -43,12 +42,29 @@ public class PlatformModel {
 		this.id = id;
 	}
 
-	public String getDiscussionName() {
-		return discussionName;
+
+	public String getValue() {
+		return value;
 	}
 
-	public void setDiscussionName(String discussionName) {
-		this.discussionName = discussionName;
+	public void setValue(String value) {
+		this.value = value;
+	}
+
+	public int getOrdervalue() {
+		return ordervalue;
+	}
+
+	public void setOrdervalue(int ordervalue) {
+		this.ordervalue = ordervalue;
+	}
+
+	public Long getPlatformid() {
+		return platformid;
+	}
+
+	public void setPlatformid(Long platformid) {
+		this.platformid = platformid;
 	}
 
 	public String getFirstName() {
@@ -67,13 +83,19 @@ public class PlatformModel {
 		this.lastName = lastName;
 	}
 
-	public String getTags() {
-		return tags;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setTags(String tags) {
-		this.tags = tags;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 
+	
+
+	
+
+
+	
 }

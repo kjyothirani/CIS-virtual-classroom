@@ -20,12 +20,11 @@ CREATE TABLE `classroom`.`registration` (
   `created_date` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
   
-  CREATE TABLE `digimags`.`platformDiscussion` (
-  `id` bigint(20) NOT NULL,
-  `order` int(3) NOT NULL,
-  `value` varchar(1024) NOT NULL,
-  `component_id` bigint(20) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `IX_epub_content_property_component_id` (`component_id`),
-  CONSTRAINT `FK_epub_content_property_component_id` FOREIGN KEY (`component_id`) REFERENCES `digimags`.`platform` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+     CREATE TABLE `digimags`.`platformdiscussion` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+    `ordervalue` int(3) NULL DEFAULT NULL, `value` VARCHAR(1024) NULL DEFAULT NULL, `platformid` BIGINT(20) NOT NULL,`username` VARCHAR(24) NULL DEFAULT NULL,
+    `firstname` VARCHAR(24) NULL DEFAULT NULL,
+  `lastname` VARCHAR(48) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
+  
+  
