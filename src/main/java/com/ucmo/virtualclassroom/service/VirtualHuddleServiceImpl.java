@@ -1,5 +1,7 @@
 package com.ucmo.virtualclassroom.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,12 @@ public class VirtualHuddleServiceImpl implements VirtualHuddleService {
 			return true;
 			else
 				return false;
+	}
+
+	@Override
+	public List<VirtualHuddleModel> getAll() {
+		// TODO Auto-generated method stub
+		return repository.findAll();
 	}
 
 }
