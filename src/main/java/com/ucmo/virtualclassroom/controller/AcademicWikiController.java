@@ -22,21 +22,6 @@ public class AcademicWikiController {
 	@Autowired
 	private WikiService service;
 	
-	public List<AcademicWikiModel> getUploadDetails(){
-		List<AcademicWikiModel> academicWikiList = new ArrayList<AcademicWikiModel>();
-		
-		AcademicWikiModel ac = new AcademicWikiModel();
-		ac.setResource("w3schools");
-		ac.setLink("www.w3schools.com");
-		ac.setPdf("xxx");
-		ac.setArticleName("Learn Jquery");
-		ac.setDate("10/24/2017");
-		ac.setStudentName("Jyothi Rani");
-		academicWikiList.add(ac);
-		
-		return academicWikiList;
-		
-	}
 	
 	@RequestMapping(value = "/classroom/upload", method = RequestMethod.GET)
 	public ModelAndView  upload() {

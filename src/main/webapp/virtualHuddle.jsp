@@ -5,19 +5,17 @@
 <html>
 	<head>
 	
-		<title>Home Page</title>
+		<title>virtual huddle</title>
 		<link rel="stylesheet" href="/homepage.css">
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script type="text/javascript">
-		
-		
-		$(function() {
+		<script>
+			$(function() {
 				
-			 $('.text').hide();
+			
 			   /*  Submit form using Ajax */
 			   $('#submitButton').click(function(e) {
-				   console.log($('form[name=uploadform]'));
+				   console.log($('form[name=virtualhuddleform]'));
 				      
 			      //Prevent default submission of form
 			      e.preventDefault();
@@ -27,8 +25,8 @@
 			 
 			      
 			      $.post({
-			         url : 'submitUpload',
-			         data : $("#uploadform").serialize(),
+			         url : 'submithuddle',
+			         data : $("#virtualhuddleform").serialize(),
 			         success : function(res) {
 
 				           console.log(res);
@@ -49,8 +47,6 @@
 			   });
 			});
 		</script>
-		
-		
 	</head>
 		
 		<body background ="/Images/bg.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
@@ -68,14 +64,14 @@
 				<ul>
 					
 					<li class="dropdown">
-						<a href="/classroom/academicWiki" class="dropbtn">Academic Wiki</a>
+						<a href="academicWiki" class="dropbtn" id="academicWiki">Academic Wiki</a>
 						
 					</li>
 					
 					
 					<li class="dropdown">
 					
-						<a href="/classroom/platform" class="dropbtn">UCMO Platform</a>
+						<a href="platform" class="dropbtn">UCMO Platform</a>
 						
 					
 					</li>
@@ -87,64 +83,49 @@
 					</li>
 					
 					
-					
-					
 				</ul>
 			</div>
+		
 	<div id="showMessage" align="center" style="color:green;display:none" >
-				upload is success.
+				Huddle saved successfully
 			</div>		
-	<H1 ALIGN="CENTER" style="color: black">Upload Here</H1>
-	<form:form method="POST" modelAttribute="uploadform" name="uploadform" id="uploadform">
+	
+	<form:form method="POST" modelAttribute="virtualhuddleform" name="virtualhuddleform" id="virtualhuddleform">
 		<div>
-			<table align="center" style="color:black">
+			<table align="center">
 				<tr>
-					<td><h3 style="color: black">Resource</h3>
+					<td><h3 style="color: black">Virtual Huddle Name:</h3>
 					<td>
-					<td><form:input type="text" name="resource" path="resource"/>
+					<td><input type="text" name="huddlename" />
 					<td>
 				</tr>
+
 				<tr>
-					<td><h3 style="color: black">Link</h3>
+					<td><h3 style="color: black">select date</h3>
 					<td>
-					<td><input type="text" name="link" />
+					<td><input type="date" id="datepicker" name="selectdate" />
+					<td>
+				</tr>
+
+				
+				
+				<tr>
+					<td><h3 style="color: black">Huddle Description:</h3>
+					<td>
+					<td><input type="text" name="description" />
+					<td>
+				</tr>
+				
+				<tr>
+					<td><h3 style="color: black">Huddle Place:</h3>
+					<td>
+					<td><input type="text" name="huddleplace" />
 					<td>
 				</tr>
 
 				
 				<tr>
-					<td><h3 style="color: black">PDF:</h3>
-					<td>
-					<td><input type="text" name="pdf" />
-					<td>
-				</tr>
-				
-				<tr>
-					<td><h3 style="color: black">Uploaded Date:</h3>
-					<td>
-					<td><input type="text" name="uploadedDate" />
-					<td>
-				</tr>
-				
-				
-				<tr>
-					<td><h3 style="color: black">Article Name:</h3>
-					<td>
-					<td><input type="text" name="articleName" />
-					<td>
-				</tr>
-				
-				<tr>
-					<td><h3 style="color: black">Student Name:</h3>
-					<td>
-					<td><input type="text" name="studentName" />
-					<td>
-				</tr>
-
-
-				
-				<tr>
-					<td><input type="submit" id="submitButton" value="Upload"  /></td>
+					<td><input type="submit" id="submitButton" value="Submit"  /></td>
 				</tr>
 			</table>
 			
