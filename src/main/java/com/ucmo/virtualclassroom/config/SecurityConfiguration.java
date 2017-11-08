@@ -39,7 +39,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter  {
     
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-    	String[] PERMITTED_URLS = { "/classroom/loginPage", "/Images/**","/*css","/classroom/register","/classroom/submitRegistration"};
+    	String[] PERMITTED_URLS = { "/classroom/loginPage", "/Images/**","/*css","/classroom/register","/classroom/submitRegistration","/js/**"};
         http.authorizeRequests().antMatchers(PERMITTED_URLS).permitAll().anyRequest().authenticated().and().formLogin().loginPage("/classroom/loginPage")
         .defaultSuccessUrl("/classroom/home").usernameParameter("studentID").passwordParameter("password");
                   // it's indicate all request will be secure

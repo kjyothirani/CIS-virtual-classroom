@@ -46,29 +46,35 @@
 	</head>
 		
 		<body background ="/Images/bg.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
-		<jsp:include page = "header.jsp" />
+		
+		
+		
+				<jsp:include page = "header.jsp" />
+			
 			<br/>
 			<br/>
 			
-			<table  rules="none" align="center"  style="color:black" cellpadding="10" cellspacing="10">
-		
+			<table border="1" rules="none" style="color:black" cellpadding="30" cellspacing="40">
+				<thead>
+				<tr class="border_bottom">
+					<th>Huddle Name  </th>
+					<th>Date  </th>
+					<th>Huddle Description  </th>
+					<th>Huddle  Place  </th>
+					
+				</tr>
+				</thead>
 				<tbody>
-
-				<tr >
-				<c:forEach items="${platformList}" var="platformValue">
-				<tr >
+				<tr>
+				<c:forEach items="${huddlelist}" var="huddle">
+				<tr class="border_bottom">
 				
- 				<td> <a  href="platformDiscussion?id=${platformValue.getId() }"> ${platformValue.getDiscussionName()}</a></td>
- 				</tr>
- 				<tr>
- 				<td>  ${platformValue.getFirstName()}     ${platformValue.getLastName()} ||  ${platformValue.getUsername()} </td>
- 				<td>
- 				  ${platformValue.getTags()}</td>
+ 				<td>  ${huddle.getHuddlename()}</td>
+ 				<td> ${huddle.getSelectdate()}</td>
+ 				<td>  ${huddle.getDescription()}</td>
+ 				<td>${huddle.getHuddleplace()}</td>
  				
  				</tr>
- 				<tr><td>--------------------------------------------------------------------------------</td>
- 				</tr>
- 				
 				</c:forEach>
 				 
 				 </tr> 
@@ -78,7 +84,7 @@
 			</table>
 			<br/>
 			<br/>
-			<div align="center"><a href="/classroom/newDiscussion" class="button">Post new question</a></div>
+			<div align="center"><a href="/classroom/virtualhuddle" class="button">Post new Huddle</a></div>
 		  
 			
 			

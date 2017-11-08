@@ -24,7 +24,7 @@ public class VirtualHuddleModel {
 	
 	
 	@Column(name = "selectdate")
-	private Date selectdate;
+	private String selectdate;
 	
 	@Column(name="description")
 	private String description;
@@ -47,13 +47,14 @@ public class VirtualHuddleModel {
 		this.huddlename = huddlename;
 	}
 	
-	public Date getSelectDate() {
+	
+	
+	public String getSelectdate() {
 		return selectdate;
 	}
-	public void setSelectDate(Date selectDate) {
-		this.selectdate = selectDate;
+	public void setSelectdate(String selectdate) {
+		this.selectdate = selectdate;
 	}
-	
 	public String getDescription() {
 		return description;
 	}

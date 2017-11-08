@@ -36,4 +36,12 @@ public class VirtualHuddleController {
 		response.setSuccess(true);
 		return response;
 	}
+	
+	@RequestMapping(value = "/classroom/listhuddles", method = RequestMethod.GET)
+	public ModelAndView listhuddle(){
+		ModelAndView mv =new ModelAndView("huddlelist");
+		mv.addObject("huddlelist", service.getAll());
+		return mv;
+		
+	}
 }
