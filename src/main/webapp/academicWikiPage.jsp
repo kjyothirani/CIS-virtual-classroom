@@ -11,39 +11,20 @@
 	
 		<title>Home Page</title>
 		<link rel="stylesheet" href="/homepage.css">
-
-		<style>
-			.button {
-			background-color: blue;
-			border: none;
-			color: white;
-			padding: 10px 10px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 16px;
-			margin: 4px 2px;
-			cursor: pointer;
-			height:30px;
-			width:100px;
-			align: center;
-			
-			}
-			
-			
-
-			#academicWiki{
-			 background-color: blue;
-			}
-			th{
-				font-size: 20px;
-			}
-			tr {border: thin solid black;}
-			table{
-			  border-collapse: collapse;
-			}
-		</style>
+		<link rel="stylesheet" href="/css/academicwiki.css">
+		<link rel="stylesheet" href="http://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript">
+		  $(document).ready(function(){
+		     $('#example').DataTable();
+		  });
+		</script>
 		
+		
+		
+		
+	
 	</head>
 		
 		<body background ="/Images/bg.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
@@ -85,10 +66,10 @@
 			
 			<br/>
 			<br/>
-			
-			<table border="1" rules="none" style="color:black" cellpadding="30" cellspacing="40">
+			<div class="pagination">
+			<table id="example" rules="none" "border="0" rules="none">
 				<thead>
-				<tr class="border_bottom">
+				<tr>
 					<th>Resource  </th>
 					<th>Link  </th>
 					<th>PDF  </th>
@@ -98,9 +79,9 @@
 				</tr>
 				</thead>
 				<tbody>
-				<tr>
+
 				<c:forEach items="${academicList}" var="academicList">
-				<tr class="border_bottom">
+				<tr>
 				
  				<td>  ${academicList.getResource()}</td>
  				<td>  <a href="${academicList.getLink()}">${academicList.getLink()}</a></td>
@@ -111,13 +92,15 @@
  				</tr>
 				</c:forEach>
 				 
-				 </tr> 
 				 </tbody>
 				 
 				
 			</table>
+			
+			</div>
 			<br/>
 			<br/>
+			
 			<div align="center"><a href="/classroom/upload" class="button">Upload New</a></div>
 		  
 			
