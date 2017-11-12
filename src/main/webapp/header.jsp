@@ -37,7 +37,7 @@
 			th{
 				font-size: 18px;
 			}
-			tr:first-child {border: thin solid black;}
+			
 			table{
 			  border-collapse: collapse;
 			}
