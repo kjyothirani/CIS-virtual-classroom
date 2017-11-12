@@ -11,7 +11,7 @@
 		
 	</head>
 		
-		<body background ="/Images/bg.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
+		<body style="background-repeat:no-repeat; background-size: 1600px 800px;">
 		
 				
 				<jsp:include page = "header.jsp" />

@@ -7,7 +7,7 @@
 	
 		<title>virtual huddle</title>
 		<link rel="stylesheet" href="/homepage.css">
-		
+		<script src="/js/datatable.js"></script>
 		
 		<script>
 			$(function() {
@@ -59,7 +59,7 @@
 	
 	<form:form method="POST" modelAttribute="virtualhuddleform" name="virtualhuddleform" id="virtualhuddleform">
 		<div>
-			<table align="center">
+			<table id="example" align="center">
 				<tr>
 					<td><h3 style="color: black">Virtual Huddle Name:</h3>
 					<td>
@@ -100,7 +100,9 @@
 
 		</div>
 	</form:form>
-	
-	
+	<div align="center">
+		<input type="button" value="Subscribe">
+		<input type="button" value="Unsubscribe">	
+	</div>
 </body>
 </html>

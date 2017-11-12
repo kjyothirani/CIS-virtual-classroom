@@ -42,7 +42,7 @@
 			  border-collapse: collapse;
 			}
 		</style>
-		
+		<script src="/js/datatable.js"></script>
 	</head>
 		
 		<body background ="/Images/bg.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
@@ -50,7 +50,7 @@
 			<br/>
 			<br/>
 			
-			<table  rules="none" align="center"  style="color:black" cellpadding="10" cellspacing="10">
+			<table  id="example" rules="none" align="center"  style="color:black" cellpadding="10" cellspacing="10">
 		
 				<tbody>
 
