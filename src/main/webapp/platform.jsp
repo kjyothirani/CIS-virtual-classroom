@@ -43,9 +43,53 @@
 			  border-collapse: collapse;
 			}
 		</style>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		
+		<link rel="stylesheet" href="http://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+
+		<script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+		
 		<script type="text/javascript">
+		$(document).ready(function(){
+	
+			getData();
+			console.log("entered");
+	
+		
+		});
+		
+		function getData()
+		{
+			
+		
+		      $.get({
+			         url : 'platformdata',
+			         beforeSend : function(xhr, opts){
+			        	    $('#loadinggif').css("display","block");
+			         },
+			         success : function(res) {
+
+			        	  $('#loadinggif').css("display","none");
+			           
+			        		$('#example').dataTable({
+			   				data:res,
+			   			    	"aoColumns": [
+			   						 { "mData": "discussionName", "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+			   				            $(nTd).html("<a href='platformDiscussion?id="+oData.id+"'>"+oData.discussionName+"</a>");
+			   				        } },
+			   						  { "mData": "username" },
+			   						  { "mData": "tags" },
+			   						 { "mData": "id" , "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+		$(nTd).html("<a href=\"javascript:void(0);\" ><img onclick=\"deleteDiscussion("+oData.id+")\" src=\"/Images/delete-button.png\" style=\"height: 25px; width: 25px;\"> </a>"
+				   		 				 );}}
+			   						 
+			   					]
+			   			});
+			            
+			            }
+			      });
+		}
 		function deleteDiscussion(id)
 		{
 			console.log("entered");
@@ -63,21 +107,21 @@
 				         url : 'deleteDiscussion?id='+id,
 				         success : function(res) {
 
-					           console.log(res);
+					           
 				            if(res.success){
 				               //Set response
-				           console.log("here");
-				               var dubid ='\'#Unsubscribe'+id+'\'';
-				              $('#showMessage').css("display","block");
-				        
+				         
 				           
-				            
+				              $('#showMessage').css("display","block");
+				              $('#loadinggif').css("display","block");
+				              $('#example').DataTable().destroy();
+				              getData();
+				             
 				            }else{
 				              }
 				         }
-				      });
+				      },5000);
 			      
-			     location.reload();
 				hidePop();
 			});
 			$('.no').on('click', function() {
@@ -95,9 +139,7 @@
 		<jsp:include page = "header.jsp" />
 			<br/>
 			<br/>
-			<div id="showMessage" align="center" style="color:green;display:none" >
-				Deleted the selected discussion.
-			</div>	
+			
 				<div class="selectShadow"></div>
 				<div class="pop deletPop">
 				
@@ -118,38 +160,24 @@
 			<span class="alertMsg">Alert</span>
 		</div>
 	</div>
-			<div class="pagination">
-			<table  id="example" rules="none" align="center"  style="color:black" cellpadding="10" cellspacing="10">
-		
-				<tbody>
-
-				<tr >
-				<c:forEach items="${platformList}" var="platformValue">
-				<tr >
-				
- 				<td> <a  href="platformDiscussion?id=${platformValue.getId() }"> ${platformValue.getDiscussionName()}</a></td>
- 				</tr>
- 				<tr>
- 				<td>  ${platformValue.getFirstName()}     ${platformValue.getLastName()} ||  ${platformValue.getUsername()} </td>
- 				<td>
- 				  ${platformValue.getTags()}  </td>
- 				  <td> <div align="center"><a href="javascript:void(0);" ><img onclick="deleteDiscussion(${platformValue.getId() })" src="/Images/delete-button.png" style="height: 25px; width: 25px;">
- 				  </a>
- 				  </div>
- 				  </td>
- 				
- 				</tr>
- 				<tr><td>--------------------------------------------------------------------------------</td>
- 				</tr>
- 				
-				</c:forEach>
-				 
-				 </tr> 
-				 </tbody>
-				 
-				
-			</table>
-			</div>
+	<div id="showMessage" align="center" style="color:green;display:none" >
+				Deleted the selected discussion.
+			</div>	
+			
+			<div id="loadinggif" align="center"  style="color:green;display:none" >
+				<img src="/Images/loading.gif"></img>
+			</div>	
+	<table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>DiscussionName</th>
+                <th>Username</th>
+                <th>Tags</th>
+                 <th></th>
+            </tr>
+        </thead>
+       
+    </table>
 			<br/>
 			<br/>
 			<div align="center"><a href="/classroom/newDiscussion" class="button">Post new question</a></div>

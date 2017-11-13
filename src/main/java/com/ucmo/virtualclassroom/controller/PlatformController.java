@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ucmo.virtualclassroom.config.MyUserPrincipal;
 import com.ucmo.virtualclassroom.model.PlatformForm;
 import com.ucmo.virtualclassroom.model.PlatformModel;
@@ -33,11 +34,17 @@ public class PlatformController {
 		ModelAndView mv =null;
 		try {
 			mv=new ModelAndView("platform");
-			mv.addObject("platformList", platformService.getAll());
+			//mv.addObject("platformList", platformService.getAll());
 			return mv;
 		} catch (Exception e) {
 		}
 		return mv;
+	}
+	
+	@RequestMapping(value = "/classroom/platformdata", method = RequestMethod.GET)
+	public  List<PlatformModel>  displayPlatformData() {
+	 ObjectMapper mapper = new ObjectMapper();
+		return platformService.getAll();
 	}
 	
 	@RequestMapping(value = "/classroom/newDiscussion", method = RequestMethod.GET)
