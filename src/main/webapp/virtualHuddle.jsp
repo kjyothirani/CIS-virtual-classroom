@@ -7,12 +7,14 @@
 	
 		<title>virtual huddle</title>
 		<link rel="stylesheet" href="/homepage.css">
+		<link rel="stylesheet" href="http://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 		<script src="/js/datatable.js"></script>
-		
 		<script>
 			$(function() {
 				
-			
+				 
 			   /*  Submit form using Ajax */
 			   $('#submitButton').click(function(e) {
 				   console.log($('form[name=virtualhuddleform]'));
