@@ -18,6 +18,7 @@ public class MyUserPrincipal implements UserDetails {
         this.user = user;
     }
 	
+	private long id ;
 	private String firstname;
 	
 	private String lastname;
@@ -85,6 +86,14 @@ public class MyUserPrincipal implements UserDetails {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public long getId() {
+		return this.user.getId();
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 	
 

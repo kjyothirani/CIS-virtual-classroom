@@ -31,8 +31,13 @@ CREATE TABLE `classroom`.`registration` (
   CREATE TABLE `digimags`.`virtualhuddle` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
     `huddlename` VARCHAR(24) NULL DEFAULT NULL, `selectdate` DATETIME NULL DEFAULT NULL,
-  `description` VARCHAR(48) NULL DEFAULT NULL,`huddleplace` VARCHAR(48) NULL DEFAULT NULL,
+  `description` VARCHAR(48) NULL DEFAULT NULL,`huddleplace` VARCHAR(48) NULL DEFAULT NULL,`subscribed` boolean NULL DEFAULT false,
   `created_date` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
+  
+    CREATE TABLE `digimags`.`subscribe` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+    `huddleid` BIGINT(20) NULL DEFAULT 0, `userid` BIGINT(20) NULL DEFAULT 0,
   PRIMARY KEY (`id`)) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
   
   

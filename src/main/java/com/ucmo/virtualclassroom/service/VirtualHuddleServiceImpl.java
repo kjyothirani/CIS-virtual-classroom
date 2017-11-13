@@ -5,13 +5,17 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ucmo.virtualclassroom.model.Subscribe;
 import com.ucmo.virtualclassroom.model.VirtualHuddleModel;
+import com.ucmo.virtualclassroom.repository.SubscribeRepository;
 import com.ucmo.virtualclassroom.repository.VirtualHuddleRepository;
 @Service
 public class VirtualHuddleServiceImpl implements VirtualHuddleService {
 
 	@Autowired
 	private VirtualHuddleRepository repository;
+	@Autowired
+	private SubscribeRepository subscribeRepository;
 	
 	@Override
 	public boolean saveHuddle(VirtualHuddleModel model) {
@@ -26,6 +30,27 @@ public class VirtualHuddleServiceImpl implements VirtualHuddleService {
 	public List<VirtualHuddleModel> getAll() {
 		// TODO Auto-generated method stub
 		return repository.findAll();
+	}
+
+	@Override
+	public boolean subscribeHuddle(Subscribe model) {
+		model = subscribeRepository.save(model);
+		if(model!=null)
+			return true;
+			else
+				return false;
+	}
+
+	@Override
+	public VirtualHuddleModel getHuddle(Long id) {
+		// TODO Auto-generated method stub
+		return repository.getOne(id);
+	}
+
+	@Override
+	public List<Subscribe> getSubscribedHuddles(Long id) {
+		
+		return subscribeRepository.findByUserid(id);
 	}
 
 }

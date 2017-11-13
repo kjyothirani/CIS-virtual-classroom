@@ -102,9 +102,6 @@
 
 		</div>
 	</form:form>
-	<div align="center">
-		<input type="button" value="Subscribe">
-		<input type="button" value="Unsubscribe">	
-	</div>
+	
 </body>
 </html>

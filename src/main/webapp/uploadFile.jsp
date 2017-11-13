@@ -10,44 +10,7 @@
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript">
-		
-		
-		$(function() {
-				
-			 $('.text').hide();
-			   /*  Submit form using Ajax */
-			   $('#submitButton').click(function(e) {
-				   console.log($('form[name=uploadform]'));
-				      
-			      //Prevent default submission of form
-			      e.preventDefault();
-			      
-			      //Remove all errors
-			      $('input').next().remove();
-			 
-			      
-			      $.post({
-			         url : 'submitUpload',
-			         data : $("#uploadform").serialize(),
-			         success : function(res) {
-
-				           console.log(res);
-			            if(res.success){
-			               //Set response
-			           console.log("here");
-			              $('#showMessage').css("display","block");
-			             
-			 
-			            
-			            }else{
-			              //Set error messages
-			             
-			              }
-			          
-			         }
-			      });
-			   });
-			});
+	
 		</script>
 		
 		
@@ -60,7 +23,7 @@
 				upload is success.
 			</div>		
 	<H1 ALIGN="CENTER" style="color: black">Upload Here</H1>
-	<form:form method="POST" modelAttribute="uploadform" name="uploadform" id="uploadform">
+	<form:form method="POST" action="/classroom/submitUpload" modelAttribute="uploadform" name="uploadform" id="uploadform" enctype="multipart/form-data">
 		<div>
 			<table align="center" style="color:black">
 				<tr>
@@ -72,7 +35,7 @@
 				<tr>
 					<td><h3 style="color: black">Link</h3>
 					<td>
-					<td><input type="text" name="link" />
+					<td><form:input type="text" name="link" path="link" />
 					<td>
 				</tr>
 
@@ -80,29 +43,24 @@
 				<tr>
 					<td><h3 style="color: black">PDF:</h3>
 					<td>
-					<td><input type="text" name="pdf" />
+					<td><form:input type="file" name="pdf"  path="pdf"/>
 					<td>
 				</tr>
 				
-				<tr>
-					<td><h3 style="color: black">Uploaded Date:</h3>
-					<td>
-					<td><input type="text" name="uploadedDate" />
-					<td>
-				</tr>
+			
 				
 				
 				<tr>
 					<td><h3 style="color: black">Article Name:</h3>
 					<td>
-					<td><input type="text" name="articleName" />
+					<td><form:input type="text" name="articleName" path="articleName" />
 					<td>
 				</tr>
 				
 				<tr>
 					<td><h3 style="color: black">Student Name:</h3>
 					<td>
-					<td><input type="text" name="studentName" />
+					<td><form:input type="text" name="studentName" path="studentName" />
 					<td>
 				</tr>
 

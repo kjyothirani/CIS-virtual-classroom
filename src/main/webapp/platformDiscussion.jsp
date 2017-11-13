@@ -52,14 +52,10 @@
 			   /*  Submit form using Ajax */
 			   $('#submitButton1').click(function(e) {
 				   console.log($('form[name=uploadform]'));
-				      
 			      //Prevent default submission of form
 			      e.preventDefault();
-			      
 			      //Remove all errors
 			      $('input').next().remove();
-			 
-			      
 			      $.post({
 			         url : 'replyDiscussion',
 			         data : $("#platformForm").serialize(),
@@ -70,14 +66,9 @@
 			               //Set response
 			           console.log("here");
 			              $('#showMessage').css("display","block");
-			             
-			 
 			            
 			            }else{
-			              //Set error messages
-			             
 			              }
-			          
 			         }
 			      });
 			   });

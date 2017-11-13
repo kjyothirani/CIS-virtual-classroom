@@ -3,14 +3,14 @@ package com.ucmo.virtualclassroom.model;
 
 
 
-import java.sql.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
 
 @Entity
 @Table(name="virtualhuddle")
@@ -31,7 +31,8 @@ public class VirtualHuddleModel {
 	
 	@Column(name="huddleplace")
 	private String huddleplace;
-	
+	@Transient
+	private boolean subscribed;
 	
 	public Long getId() {
 		return Id;
@@ -67,6 +68,13 @@ public class VirtualHuddleModel {
 	}
 	public void setHuddleplace(String huddleplace) {
 		this.huddleplace = huddleplace;
+	}
+	@Transient
+	public boolean isSubscribed() {
+		return subscribed;
+	}
+	public void setSubscribed(boolean subscribed) {
+		this.subscribed = subscribed;
 	}
 	
 

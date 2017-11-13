@@ -1,19 +1,18 @@
 package com.ucmo.virtualclassroom.controller;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.File;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ucmo.virtualclassroom.model.AcademicWikiForm;
 import com.ucmo.virtualclassroom.model.AcademicWikiModel;
 import com.ucmo.virtualclassroom.model.LoginModel;
-import com.ucmo.virtualclassroom.model.LoginSuccess;
-import com.ucmo.virtualclassroom.model.RegistrationModel;
 import com.ucmo.virtualclassroom.model.Success;
 import com.ucmo.virtualclassroom.service.WikiService;
 @RestController
@@ -21,6 +20,9 @@ public class AcademicWikiController {
 	
 	@Autowired
 	private WikiService service;
+	
+	@Autowired
+	private Environment env;
 	
 	
 	@RequestMapping(value = "/classroom/upload", method = RequestMethod.GET)
@@ -43,16 +45,24 @@ public class AcademicWikiController {
 	}
 	
 	@RequestMapping(value = "/classroom/submitUpload", method = RequestMethod.POST)
-	public Success  submitUpload(@ModelAttribute("uploadform") AcademicWikiModel request) {
+	public ModelAndView  submitUpload(@ModelAttribute AcademicWikiForm request) {
 		Success response = new Success();
 		try {
-			boolean success =service.saveWiki(request);
+			AcademicWikiModel model = new AcademicWikiModel();
+			File f = new File(env.getProperty("temp.file.location")+request.getPdf().getOriginalFilename());
+			request.getPdf().transferTo(f);
+			model.setArticleName(request.getArticleName());
+			model.setPdf(f.getAbsolutePath());
+			model.setResource(request.getResource());
+			model.setStudentName(request.getStudentName());
+			boolean success =service.saveWiki(model);
 			response.setSuccess(success);
 		} catch (Exception e) {
 			response.setSuccess(false);
 		}
-		response.setSuccess(true);
-		return response;
+		ModelAndView mav = new ModelAndView("uploadFile");
+		mav.addObject("uploadform", new AcademicWikiModel());
+		return mav;
 	}
 	
 	

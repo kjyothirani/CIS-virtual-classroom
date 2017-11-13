@@ -18,6 +18,7 @@ import com.ucmo.virtualclassroom.model.PlatformModel;
 import com.ucmo.virtualclassroom.model.Platformdiscussion;
 import com.ucmo.virtualclassroom.model.Success;
 import com.ucmo.virtualclassroom.service.PlatformService;
+import com.ucmo.virtualclassroom.utils.UCMUtils;
 
 @RestController
 public class PlatformController {
@@ -75,7 +76,7 @@ public class PlatformController {
 		Success response = new Success();
 		PlatformModel model = new PlatformModel();
 		model.setDiscussionName(request.getDiscussionName());
-		MyUserPrincipal principal = getUser();
+		MyUserPrincipal principal = UCMUtils.getUser();
 		model.setFirstName(principal.getFirstname());
 		model.setLastName(principal.getLastname());
 		model.setUsername(principal.getUsername());
@@ -112,7 +113,7 @@ public class PlatformController {
 		discussion.setOrdervalue(model.size()+1);
 		discussion.setPlatformid(request.getId());
 		discussion.setValue(request.getDiscussion());
-		MyUserPrincipal principal = getUser();
+		MyUserPrincipal principal = UCMUtils.getUser();
 		discussion.setFirstName(principal.getFirstname());
 		discussion.setLastName(principal.getLastname());
 		discussion.setUsername(principal.getUsername());
@@ -128,14 +129,4 @@ model =platformService.getPlatformDiscussion(request.getId());
 	}
 
 	
-	private MyUserPrincipal getUser()
-	{
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		MyUserPrincipal userData = null;
-		if (principal instanceof MyUserPrincipal)
-		{
-			userData =(MyUserPrincipal) principal;
-		}
-		return userData;
-	}
 }

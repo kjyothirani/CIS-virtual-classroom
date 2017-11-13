@@ -42,7 +42,32 @@
 			  border-collapse: collapse;
 			}
 		</style>
-		
+		<script type="text/javascript">
+		function subscribe(id)
+		{
+			console.log(id);
+		      $.post({
+			         url : 'subscribehuddle?id='+id,
+			         success : function(res) {
+
+				           console.log(res);
+			            if(res.success){
+			               //Set response
+			           console.log("here");
+			               var dubid ='\'#Unsubscribe'+id+'\'';
+			               console.log(dubid);
+			              $('#showMessage').css("display","block");
+			              
+			              $('#Unsubscribe'+id).css("display","block");
+			              $('#subscribe'+id).css("display","none");
+			            
+			            }else{
+			              }
+			         }
+			      });
+			
+		}
+		</script>
 	</head>
 		
 		<body background ="/Images/bg.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
@@ -53,7 +78,10 @@
 			
 			<br/>
 			<br/>
-			
+		
+				<div id="showMessage" align="center" style="color:green;display:none" >
+				Subscribed to the huddle
+			</div>		
 			<table border="1" rules="none" style="color:black" cellpadding="30" cellspacing="40">
 				<thead>
 				<tr class="border_bottom">
@@ -73,7 +101,15 @@
  				<td> ${huddle.getSelectdate()}</td>
  				<td>  ${huddle.getDescription()}</td>
  				<td>${huddle.getHuddleplace()}</td>
- 				
+ 				<c:if test="${huddle.subscribed == true }">
+				<td><input type="submit" id="Unsubscribe" value="Unsubscribe" onclick="subscribe( ${huddle.getId()})"  /></td>
+				
+				</c:if>
+				<td><input type="submit" id="Unsubscribe${huddle.getId()}" style="display:none" value="Unsubscribe" onclick="subscribe( ${huddle.getId()})"  /></td>
+				<c:if test="${huddle.subscribed == false }">
+				<td><input type="submit" id="subscribe${huddle.getId()}" value="Subscribe" onclick="subscribe( ${huddle.getId()})"  /></td>
+				</c:if>
+				<td><input type="submit" id="subscribe${huddle.getId()}" style="display:none" value="Subscribe" onclick="subscribe( ${huddle.getId()})"  /></td>
  				</tr>
 				</c:forEach>
 				 
