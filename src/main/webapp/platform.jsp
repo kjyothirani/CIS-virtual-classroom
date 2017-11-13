@@ -11,7 +11,8 @@
 	
 		<title>Home Page</title>
 		<link rel="stylesheet" href="/homepage.css">
-
+		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/lightbox.css">
 		<style>
 			.button {
 			background-color: blue;
@@ -42,14 +43,82 @@
 			  border-collapse: collapse;
 			}
 		</style>
-		<script src="/js/datatable.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+		<script type="text/javascript">
+		function deleteDiscussion(id)
+		{
+			console.log("entered");
+			$('.pop').show();
+			$('.selectShadow').show();
+			var $this = $(this);
+			function hidePop(){
+				$('.pop').hide();
+				$('.selectShadow').hide();
+			}
+			$('.yes').off('click').on('click', function() {
+				console.log("clicked yes");
+				$this.closest(".gridBlock").addClass("tobedeleted");
+			      $.post({
+				         url : 'deleteDiscussion?id='+id,
+				         success : function(res) {
+
+					           console.log(res);
+				            if(res.success){
+				               //Set response
+				           console.log("here");
+				               var dubid ='\'#Unsubscribe'+id+'\'';
+				              $('#showMessage').css("display","block");
+				        
+				           
+				            
+				            }else{
+				              }
+				         }
+				      });
+			      
+			     location.reload();
+				hidePop();
+			});
+			$('.no').on('click', function() {
+				hidePop();
+			});	
+			console.log(id);
+	
+			
+		}
+		</script>
+		
 	</head>
 		
 		<body background ="/Images/bg.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
 		<jsp:include page = "header.jsp" />
 			<br/>
 			<br/>
-			
+			<div id="showMessage" align="center" style="color:green;display:none" >
+				Deleted the selected discussion.
+			</div>	
+				<div class="selectShadow"></div>
+				<div class="pop deletPop">
+				
+					
+		<h2 id="spnQues">Are you sure you want to delete the selected
+			document?</h2>
+		<div class="form-row clear uploadRow  model-footer"
+			style="border: none; margin: 0">
+			<button class="btn btn-danger no btn-cancel">NO</button>
+			<button class="btn btn-primary yes">YES</button>
+		</div>
+	</div>
+	
+	<div class="alertPop animated fadeInRight ">
+		<span class="clsAlert clsBtn"><i class="fa fa-times"
+			aria-hidden="true"></i></span>
+		<div>
+			<span class="alertMsg">Alert</span>
+		</div>
+	</div>
+			<div class="pagination">
 			<table  id="example" rules="none" align="center"  style="color:black" cellpadding="10" cellspacing="10">
 		
 				<tbody>
@@ -63,7 +132,11 @@
  				<tr>
  				<td>  ${platformValue.getFirstName()}     ${platformValue.getLastName()} ||  ${platformValue.getUsername()} </td>
  				<td>
- 				  ${platformValue.getTags()}</td>
+ 				  ${platformValue.getTags()}  </td>
+ 				  <td> <div align="center"><a href="javascript:void(0);" ><img onclick="deleteDiscussion(${platformValue.getId() })" src="/Images/delete-button.png" style="height: 25px; width: 25px;">
+ 				  </a>
+ 				  </div>
+ 				  </td>
  				
  				</tr>
  				<tr><td>--------------------------------------------------------------------------------</td>
@@ -76,6 +149,7 @@
 				 
 				
 			</table>
+			</div>
 			<br/>
 			<br/>
 			<div align="center"><a href="/classroom/newDiscussion" class="button">Post new question</a></div>

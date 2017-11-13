@@ -55,5 +55,9 @@ public class PlatformServiceImpl implements PlatformService {
 		// TODO Auto-generated method stub
 		return platformDiscusionRepository.findByPlatformid(id);
 	}
-
+	public void deleteDiscussion(Long id) {
+		// TODO Auto-generated method stub
+		repository.delete(id);;
+	}
+	
 }

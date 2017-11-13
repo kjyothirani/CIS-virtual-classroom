@@ -128,5 +128,13 @@ model =platformService.getPlatformDiscussion(request.getId());
 		return mv;
 	}
 
+
+	@RequestMapping(value = "/classroom/deleteDiscussion", method = RequestMethod.POST)
+	public Success subscribe(@RequestParam("id") String id){
+		platformService.deleteDiscussion(Long.parseLong(id));
+		Success response = new Success();
+		response.setSuccess(true);
+		return response;
+	}
 	
 }

@@ -1,0 +1,1775 @@
+
+
+.createContentSec {
+   /*  overflow: hidden; */
+    position: relative;
+    clear: both;
+}
+.library-btn {
+    position: absolute;
+    right: -264px;
+    top: 0;
+    line-height: 31px;
+    height: 40px;
+    width: 368px;
+    padding-left: 15px;
+    color: #fff;
+    font-size: 13px;
+    text-align: left;
+    outline: none;
+    cursor: pointer;
+    font-family: "Avenir LT W01 85 Heavy";
+    transition: all 0.2s linear;
+    text-transform: uppercase;
+    border: 1px solid #d3d3d3;
+    border-right: none;
+    background: #122377; 
+}
+.library-btn i {
+    padding-right: 6px;
+    font-size: 25px;
+    position: relative;
+    top: 3px;
+}
+.wrapPublish .library-btn {
+    right: 0;
+}
+.libraryContent {
+    position: absolute;
+    right: 0;
+    top: -16px;
+    float: right;
+    width: 0;
+    opacity: 0;
+    padding: 0 15px 15px;
+    overflow-y: auto;
+    /* overflow-y: auto; */
+    transition: width 0.3s linear;
+    transform: translateX(280px);
+    border: 1px solid #d3d3d3;
+    border-right: none;
+    background: #fff;
+    z-index: 4;
+}
+.wrapPublish .libraryContent {
+    transform: translateX(0);
+    opacity: 1;
+    width: 368px;
+}
+.libraryContentRow1 {
+    clear: both;
+    padding: 20px 0 0 0;
+    float:left;
+    width:100%;
+}
+.searchRow {
+    position: relative;
+    clear: both;
+}
+.libraryContentRow1 label {
+    padding: 0 0 10px 0;
+    display: block;
+    color: #777777;
+}
+.filterSelect {
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    padding: 0 10px 0 28px;
+    font-family: "Avenir LT W01 65 Medium";
+    font-size: 14px;
+    outline: none;
+    color: #929497;
+    border-radius: 3px;
+    border: 1px solid #acacac;
+    background: none;
+}
+.filterSelect {
+    padding: 0 10px;
+}
+.listComponents {
+    font-size: 12px;
+    color: #777777;
+    padding: 16px 0 0 6px;
+    float:left;
+}
+.compresRow1 {
+	margin:0 -15px 10px;
+	float:none;
+	padding:12px 15px 0;
+	width:auto;
+	border-top:1.5px solid #d3d3d3;
+}
+.btn-grid {
+    float: right;
+    position: relative;
+    padding: 0 10px;
+    margin: 0 6px;
+    height: 40px;
+    width: 54px;
+    line-height: 44px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #777777;
+    border:1px solid #c8c9cb;
+    outline: none;
+    cursor: pointer;
+    border-radius: 4px;
+    background: #fff;
+}
+.btn-grid i {
+    padding-right: 8px;
+    color: #acacac;
+    font-size: 18px;
+}
+.btn-grid::after {
+    content: '';
+    position: absolute;
+    right: 5px;
+    top: 18px;
+    border-top: 5px solid #acacac;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+}
+.gridSection {
+    clear: both;
+    padding: 5px 0 20px;
+    overflow: hidden;
+    margin: 0 -7px 0;
+}
+.libraryContent .gridSection {
+	/* overflow:auto; */
+	margin-top:5px;
+	padding:0;
+	height:auto !important;
+}
+.gridSection .listGrid::before {
+    content: none;
+}
+.gridSection .listGrid:hover .gridOpt {
+    display: none;
+}
+.gridItem,.gridSection .gridBlock {
+    position: relative;
+    float: left;
+    width: 97px;
+    margin: 7px;
+    padding: 0;
+    cursor: pointer;
+}
+.gridImg,.gridSection .listGrid {
+    width: 100%;
+    height: 107px;
+}
+.gridImg img,.gridSection .listGrid img {
+    display: block;
+    height: 82px;
+}
+.selected {
+    color:red !important;
+}
+.hidden {
+    display:none !important;
+}
+.gridCheckClass.gridSection .gridBlock::before {
+    left: 5px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+}
+.gridCheckClass.gridSection .gridBlock.selected::after {
+    left: 8px;
+    top: 6px;
+    width: 10px;
+    height: 4px;
+}
+.gridSection .gridOpt,.gridSection .gridBlock:hover .gridOpt,.dragComposer .gridOpt,.dragComposer .gridBlock:hover .gridOpt,.dragPresentation .gridOpt,.dragPresentation .gridBlock:hover .gridOpt{
+    display: none !important;
+}
+.gridSection .gridData h3 {
+    padding: 0;
+    height: 30px;
+    line-height: 13px;
+    font-size: 9px;
+    word-break: break-all;
+}
+.gridSection .gridData h4 {
+    font-size: 9px;
+    line-height: 20px;
+    padding: 0;
+}
+.gridSection .gridData {
+    padding: 3px;
+}
+.libraryContent .searchpblc {
+    width: 100%;
+    margin: 25px 0 0;
+}
+
+/*New Screens css*/
+
+header {
+    clear: both;
+}
+.topSection {
+    height: 74px;
+    border-bottom: 1px solid #eeeeee;
+}
+.container-liquid {
+    padding: 0 30px;
+}
+.logo {
+    float: left;
+    margin: 12px 0 0 0;
+    width: 170px;
+    padding-right: 39px;
+    border-right: 1px solid #eeeeee;
+}
+.user {
+	position:relative;
+    float: right;
+    color: #58595b;
+    margin: 38px 0 0 0;
+    font-size: 14px;
+    cursor:pointer;
+    font-family:"Avenir LT W01 55 Roman";
+}
+.user > i {
+    padding: 0 0 0 10px;
+    font-size: 13px;
+    position: relative;
+    top: -2px;
+}
+.porifileDrop {
+	position:absolute;
+	right:0;
+	top:32px;
+	display:none;
+	width:180px;
+	border-radius:5px;
+	background:#58595b;
+	z-index:9;
+}
+.porifileDrop::before {
+	content:'';
+	position:absolute;
+	right:1px;
+	top:-12px;
+	border-bottom:15px solid #58595b;
+	border-left:12px solid transparent;
+	border-right:12px solid transparent;
+}
+.porifileDrop li {
+	line-height:40px;
+	color:#fff;
+	font-size:14px;
+	cursor:pointer;
+	padding:0 15px;
+}
+.topSection .container-liquid {
+	overflow:inherit;
+}
+header nav {
+    clear: both;
+    line-height: 54px;
+    border-bottom: 1.5px solid #122377;
+}
+header nav ul,header nav ul li {
+    float: left;
+}
+header nav ul li {
+    padding-left: 30px;
+}
+header nav ul li:first-child {
+    padding: 0;
+}
+header nav ul li a {
+    position: relative;
+    display: block;
+    color: #58595b;
+    font-size: 16px;
+    padding: 0 2px;
+    text-decoration: none;
+    font-family:"Avenir LT W01 65 Medium";
+}
+header nav ul li.active a {
+    color: #122377;
+}
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    
+    transform: rotateY(90deg);
+    -webkit-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    background: transparent;
+}
+header nav ul li.active a::after,header nav ul li a:hover::after {
+    content: '';
+    /* transition: all 0.4s linear; */
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    background: #122377;
+}
+.rightSec {
+    float: right;
+}
+.searchpblc {
+    position: relative;
+    float: left;
+    width: 190px;
+    height: 40px;
+    margin: 7px 0 0;
+    background: #f8f9fa;
+}
+.searchpblc:hover {
+	background: #eeeff0;
+}
+.searchpblc input {
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 32px 0 10px;
+    border: none;
+    outline: none;
+    color: #929497;
+    font-size: 14px;
+    font-family: "Avenir LT W01 55 Roman";
+    background: none;
+}
+.searchpblc input:focus {
+	color:#2d3137;
+}
+.searchpblc .fa-search {
+    line-height: 40px;
+    width: 32px;
+    color: #929497;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+}
+.searchpblc input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #929497;
+}
+.searchpblc input::-moz-placeholder { /* Firefox 19+ */
+  color: #929497;
+}
+.searchpblc input:-ms-input-placeholder { /* IE 10+ */
+  color: #929497;
+}
+.title-row {
+    clear: both;
+    padding: 25px 0 12px 0;
+    border-bottom: 1.5px solid #e1e3e4;
+}
+.wrapper .title-row  {
+	padding-top:54px;
+}
+.wrapper  .title-row.approvals-row {
+	padding-top:45px;
+}
+.title-row h2 {
+   color: #58595b;
+   font-size: 20px;
+}
+.title-row h2 span {
+    color: #929497;
+    font-size: 18px;
+    padding: 0 0 0 44px;
+}
+.page-row1 {
+	position:relative;
+    clear: both;
+    padding: 22px 0;
+    min-height:80px;
+}
+.btn-sec1,.btn-gridlist {
+    float: left;
+    margin-top: -2px;
+}
+.btn-sec1 .btn-gridView,.btn-sec1 .btn-listView,.btn-gridlist .btn-gridView,.btn-gridlist .btn-listView {
+    float: left;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    text-align: center;
+    padding-top:3px;
+    /* background-image:url('/dist/images/gridbtns.png'); 
+    background-repeat: no-repeat; */
+    background-color: #fff; 
+}
+.btn-sec1 button .icon,.btn-gridlist button .icon {
+    color: #cccccc;
+}
+.btn-sec1 button.active .icon,.btn-sec1 button:hover .icon,.btn-gridlist button.active .icon,.btn-gridlist button:hover .icon {
+    color: #003DA1;
+}
+.btn-sec1 .btn-gridView {
+	
+	/* background-position: -54px -31px; */
+}
+.btn-sec1 .btn-gridView.active,.btn-sec1 .btn-gridView:hover {
+	/* background-position: -54px 11px; */
+}
+.btn-sec1 .btn-listView span,.btn-gridlist .btn-listView span {
+	margin-top:-1px;
+	/* background-position: 7px 13px; */
+}
+.btn-sec1 .btn-listView.active,.btn-sec1 .btn-listView:hover {
+	/* background-position: 7px -32px; */
+}
+.right {
+    float: right;
+}
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 0 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #58595b;
+    letter-spacing: 0.2px;
+    font-size: 12px;
+    height: 36px;
+    text-align:center;
+    text-decoration:none;
+    line-height: 36px;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    margin: 0 6px;
+    font-family:"Avenir LT W01 65 Medium";
+    box-sizing: border-box;
+    border: 1px solid  #c6c7c9;
+    background:#ddd;
+}
+.btn:hover {
+	border-color: #003da1 !important;
+    color: #003da1;
+    background: #fff;
+}
+.btn:hover i {
+	color: #003da1 !important;
+}
+.btn:hover a {
+	color:#003da1 !important;
+}
+.btn:focus {
+	border-color: #0b1547;
+    color: #0b1547;
+    background: #fff;
+}
+.btn:focus i {
+	color: #0b1547 !important;
+}
+.btn:focus a {
+	color:#0b1547 !important;
+}
+.btn-primary {
+	color:#fff;
+	border-color:#003da1;
+    background: #003da1 !important;
+}
+.btn-primary:hover {
+	color:#fff !important;
+	background: #122377 !important;
+}
+.btn-primary:focus {
+	color:#fff !important;
+	background: #0b1547 !important;
+}
+.btn-primary:hover a {
+	color:#fff !important;
+}
+.btn-danger {
+    background: #d43f3a;
+}
+.btn-defaul {
+    border-color: #e1e3e4;
+    color: #58595b;
+    background: #fff;
+}
+
+.listViewSection .gridBlock {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+    padding: 10px;
+}
+.listViewSection .listGrid {
+    width: 110px;
+    height: 101px;
+    float: left;
+}
+.listViewSection .listGrid img {
+    height: 100px;
+}
+.listViewSection .gridData {
+    float: left;
+    clear: none;
+    padding: 28px 10px 0 30px;
+}
+.listViewSection .gridOpt {
+    position: relative;
+    width: auto;
+    top: 0;
+    display:block;
+    float: right;
+    padding: 34px 15px 0;
+    height: auto;
+    transform: rotateX(0);
+    background: #fff;
+}
+.listViewSection .gridOpt button {
+    margin: 0 10px;
+    width: auto;
+    min-width:120px;
+    border:1px solid #c6c7c9;
+    color:#58595b;
+}
+.listViewSection .gridOpt button:hover {
+	color:#003da1;
+	border:1px solid #003da1;
+}
+.listViewSection .gridData h3 {
+    height: auto;
+}
+.listViewSection .gridData h4 {
+    padding: 0;
+}
+.gridCheckClass .gridBlock::before {
+    position: absolute;
+    content: '';
+    left: 10px;
+    top: 10px;
+    width: 17px;
+    height: 17px;
+    border-radius: 40px;
+    border: 1px solid #fff;
+    z-index: 2;
+    background: #acafb2;
+}
+.gridCheckClass .gridBlock.selected::before {
+    background: #122377;
+}
+.gridCheckClass .gridBlock.selected::after,.gridSelectClass .gridBlock.selected::after {
+    position: absolute;
+    left: 14px;
+    top: 15px;
+    content: '';
+    width: 9px;
+    height: 4px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+    z-index: 3;
+}
+.gridSelectClass .gridBlock.selected::before {
+	position: absolute;
+    content: '';
+    left: 10px;
+    top: 10px;
+    width: 17px;
+    height: 17px;
+    border-radius: 40px;
+    border: 1px solid #fff;
+    z-index: 2;
+    background: #122377;
+}
+.gridSelectClass .gridBlock {
+	box-shadow:0 0 0 5px #fff;
+}
+.gridSelectClass .gridBlock.selected {
+	box-shadow:0 0 0 5px #122377;
+}
+.gridSelectClass .gridBlock.selected .listGrid::after {
+	position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background:rgba(226,227,228,0.8);
+}
+
+.clsGrid {
+	display:none;
+}
+.gridCloseClass .clsGrid {
+	display:inline-block;
+    background: #F44336;
+    right: 10px;
+    left: auto !important;
+    cursor: pointer;
+    position: absolute;
+    content: '';
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 40px;
+    border: 1px solid #fff;
+    color: white;
+    text-align: center;
+    line-height: 19px;
+    z-index: 2;
+}
+.listViewSection.gridSection .gridData {
+    padding: 15px 10px 0 17px;
+}
+.listViewSection.gridSection .listGrid {
+    height: 55px;
+}
+.listViewSection.gridSection .gridBlock {
+	margin:0 0 -1px;
+	overflow: hidden;
+}
+
+.fileContainer {
+    overflow: hidden;
+    position: relative;
+}
+.fileContainer [type=file] {
+    cursor: inherit;
+    display: block;
+    font-size: 999px;
+    filter: alpha(opacity=0);
+    min-height: 100%;
+    min-width: 100%;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+}
+.fileContainer {
+    float: left;
+    margin: 0 0 0 10px;
+    min-width: 136px;
+    box-sizing: border-box;
+    line-height: 36px;
+    display: block;
+    height: 36px;
+    border-radius: 4px;
+    background:#fff ;
+    border: solid 1px #c6c7c9;
+    padding: 0 8px;
+    outline: none;
+    white-space: nowrap;
+    text-align: center;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-size: 13px;
+    color: #58595b;
+    text-transform: uppercase;
+    font-family:"Avenir LT W01 65 Medium";
+}
+.fileContainer [type=file] {
+    cursor: pointer;
+}
+#btnUpld:hover {
+    color:#003da1;
+    border:1px solid #003da1;
+}
+#btnUpld:focus {
+    color:#0b1547;
+    border:1px solid #0b1547;
+}
+.dragPlaceholder {
+  position: relative;
+  border: 1px solid #ccc;
+  padding-top: 40px;
+}
+.dragPlaceholder::before {
+  content: 'Drag and Drop Here';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10px;
+  color: #ccc;
+  font-size: 22px;
+  text-align: center;
+}
+
+.js .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.inputfile + label {
+    max-width: 100%;
+    font-size: 12px !important;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.no-js .inputfile + label {
+    display: none;
+}
+
+.inputfile:focus + label,
+.inputfile.has-focus + label {
+    outline: none;
+    outline: none;
+}
+
+.inputfile-6 + label span {
+    /*width: 200px;*/
+    min-height: 2em;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: top;
+    padding-left: 5px;
+}
+
+.inputfile-6 + label strong {
+    height: 100%;
+    height: 36px;
+    padding: 0 15px;
+    color: #595a5c;
+    border-radius: 4px;
+    border: 1px solid #d4d5d6;
+    background-color: #fff;
+    display: inline-block;
+    text-transform:uppercase;
+}
+
+.pubTooltip {
+    display: none;
+    border: 1px solid #ccc;
+    height: 182px;
+    position: absolute;
+    right: 0px;
+    margin-top:20px; 
+    top: 100%;
+    padding: 10px 30px 10px 10px;
+    width: 320px;
+    border-radius: 4px;
+    box-shadow: 0 0 4px #ccc;
+    background: #fff; 
+}
+.pubTooltip::before {
+    content: '';
+    position: absolute;
+    right: 30px;
+    top: -15px;
+    border-bottom: 15px solid #58595b;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+.tArea {
+    width: 100%;
+    height: 60px;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 4px #ccc;
+    background: #fff;
+    outline: none;
+    transition: all 0.3s ease-in;
+}
+.tArea:focus {
+    box-shadow: inset 0 0 4px green;
+}
+.subdata {
+    position: absolute;
+    right: 3px;
+    top: 10px;
+    width: 25px;
+    height: 25px;
+    border-radius: 40px;
+    border: 1px solid #fff;
+    z-index: 2;
+    cursor: pointer;
+    background: #122377;
+}
+.subdata:after{
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    content: '';
+    width: 10px;
+    height: 5px;
+    border: 3px solid #fff;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+    z-index: 3;
+}
+.publistItems {
+    margin-right: -20px;
+    padding-top: 10px;
+}
+.publistItems li {
+    float: left;
+    position: relative;
+    list-style: none;
+    cursor: pointer;
+    margin: 5px;
+}
+.publistItems li span {
+    display: inline-block;
+    color: #fff;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 11px;
+    padding: 8px 5px;
+    max-width: 120px;
+    border-radius: 10px;
+    background: #ccc;
+}
+.publistItems li::after {
+    content: 'x';
+    width: 13px;
+    height: 13px;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    line-height: 12px;
+    cursor: pointer;
+    border-radius: 40px;
+    position: absolute;
+    right: -2px;
+    top: -2px;
+    background: red;
+}
+.tabsSec1 {
+	position:absolute;
+	left:50%;
+	top:22px;
+	display:table;
+	margin:0 0 0 -80px;
+    width: 279px;
+    box-sizing: border-box;
+    padding: 0;
+    outline: none;
+    white-space: nowrap;
+    text-align: center;
+    -webkit-user-select: none;
+    font-size: 13px;
+    color: #595a5c;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-family:"Avenir LT W01 65 Medium";
+}
+.tabsSec1 li {
+	display:table-cell;
+	overflow: hidden;    
+	cursor: pointer;
+	width:50%;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border: solid 1px #c6c7c9;
+	line-height:35px;
+	background: rgba(255, 255, 255, 0.05);
+}
+.tabsSec1 li.active ,.tabsSec1 li:hover {
+	color:#003da1 ;
+	background:#eeeff0 ;
+}
+.tabsSec1 li:first-child {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	border-right: none;
+}
+.windowAlert .alertPop {
+	display:block;
+}
+.alertPop {
+     position: fixed;
+     width: 621px;
+     top: 20px;
+     right: 51px;
+     text-align:left;
+     display: none;
+     margin: 0 0 0 0;
+     height: 80px;
+     z-index:99999;
+     padding:20px 28px;
+     border-radius:8px;
+     box-sizing:border-box;
+     background: #cc0000;
+     box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.2);
+ }
+ 
+.alertMsg {
+	font-family: avenirregular;
+	font-size: 16px;
+	font-weight: 500;
+	color: #ffffff;
+    line-height: 20px;
+    color:#fff;
+    text-align:center;
+ }
+ .clsAlert {
+ 	position:absolute;
+ 	right:10px;
+ 	top:10px;
+ 	width:13px;
+ 	height:13px;
+ 	color:#fbfcfd;
+ 	font-size:18px;
+ 	text-align:center;
+ 	line-height:13px;
+ 	cursor:pointer;
+ 	font-family: avenirregular;
+ }
+ .alertPop .btn {
+ 	display:none;
+ 	color: #777;
+    background: #f0f0f0;
+ }
+/*  .alertPop .fa {
+ 	display:none;
+  	font-size:22px;
+  	color:#fff;
+  	padding-right: 15px;
+  } */
+  .alertPop .btn-confirm {
+  	margin-left:25px;
+  }
+ .btn-create {
+ 	padding:0;
+ }
+  .btn-create a {
+  	padding:0 18px;
+  	display:block;
+  }
+  
+.windowWarning .alertPop {
+ background:#f9a937;
+}
+
+.windowSuccess .alertPop {
+ background:#73a500;
+} 
+.windowInfo .alertPop {
+ background:#00a9ce;
+}  
+.btn-rows1 {
+  	padding:15px 0 0 15px;
+  }
+ .btn-back  {
+ 	display:inline-block;
+ 	color:#122377;
+ 	text-transform:uppercase;
+ 	font-size:12px;
+   text-decoration: none;
+   line-height: 18px;
+ 	position: absolute;
+   top: 12px;
+   left:0;
+   font-family: 'avenirregular';
+ }
+ .btn-back .step {
+    top: 4px;
+    width:16px;
+    margin-right: 2px;
+ }
+.topRight {
+    float: right;
+    margin: 38px 0 0 0;
+}
+.nav-btn {
+    float: left;
+    color: #337ab7;
+    font-size: 13px;
+    padding: 0 0px;
+    margin: 1px 0 0 10px;
+    text-decoration: none;
+    font-family: 'avenirregular';
+}
+.nav-btn:hover {
+	color:#122377;
+}
+.user {
+    position: relative;
+    float: left;
+    color: #58595b;
+    margin: 0 0 0 10px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: 'avenirregular';
+}
+.pendingBtn {
+	display:inline-block;
+	position: relative;
+	width:160px;
+	height:38px;
+	margin:4px;
+	line-height:38px;
+	color:#fff;
+	font-size:13px;
+	padding:0 10px;
+	box-sizing:border-box;
+	border-radius:3px;
+	cursor:pointer;
+	text-decoration:none;
+	background:#122377;
+}
+.pendingBtn span {
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    width: 88px;
+    text-overflow: ellipsis;
+    text-decoration: underline;
+}
+.pendingBtn .fa {
+	padding-right: 3px;
+	line-height: 38px;
+    vertical-align: top;
+}
+.pendBtn {
+	width: 32px;
+    height: auto;
+    position: absolute;
+    display: inline-block;
+    top: 3px;
+    right: 7px;
+}
+.pendingLinkSection {
+	float:left;
+	max-width:710px;
+	overflow: auto;
+    height: 120px;
+    padding: 5px;
+    box-shadow: 0 0 4px #ccc;
+}
+.actionBtns {
+	float:left;
+	width: 120px;
+    margin: 8px 0 0 15px;
+}
+.actBtn {
+	position: relative;
+    display: block;
+    line-height: 28px;
+    color: #fff;
+    box-sizing: border-box;
+    height: 30px;
+    margin: 10px 0 0 0;
+    border-radius: 14px;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 0 0 1px #919191;
+    border: 1px solid #ececec;
+}
+.actApprove {
+	background: green;
+}
+.actReject {
+	background:#ff0000;
+}
+.actApprove::after {
+    position: absolute;
+    right: 8px;
+    top: 9px;
+    content: '';
+    width: 15px;
+    height: 6px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+    z-index: 3;
+}
+.actReject:before, .actReject:after {
+    position: absolute;
+    right: 15px;
+    content: ' ';
+    height: 18px;
+    top: 5px;
+    width: 2px;
+    background-color: #ffffff;
+}
+.actReject:before {
+  transform: rotate(45deg);
+}
+.actReject:after {
+  transform: rotate(-45deg);
+}
+.actionLightbx {
+     position: fixed;
+     width: 440px;
+     top: 50%;
+     left: 50%;
+     text-align:center;
+     display: none;
+     margin: -106px 0 0 -220px;
+     min-height: 212px;
+     z-index:99999;
+     padding:20px;
+     padding-top:0;
+     border-radius:6px;
+     box-sizing:border-box;
+     background: #fff;
+ }
+.actionLightbx {
+ 	font-size: 22px;
+    line-height: 40px;
+    color:#fff;
+    text-align:center;
+ }
+ .actionLightbx .clsAlert {
+ 	position:absolute;
+ 	right:0;
+ 	top:0;
+ 	width:25px;
+ 	height:25px;
+ 	color:#122377;
+ 	font-size:20px;
+ 	text-align:center;
+ 	line-height:23px;
+ 	cursor:pointer;
+ 	font-family:"Avenir LT W01 85 Heavy";
+ }
+ .actionComment {
+ 	float:left;
+ 	height:110px;
+ 	border:1px solid #ccc;
+ 	padding:10px;
+ 	outline:none;
+ 	width:100%;
+ 	color:#122377;
+ 	box-sizing:border-box;
+ 	font-size:15px;
+ 	line-height:20px;
+ 	font-family:"Avenir LT W01 55 Roman";
+ 	background:#fff;
+ }
+ .commentBx {
+ 	padding:10px 0 0 0;
+ }
+ .sureBx {
+ 	display:none;
+ 	height:110px;
+ 	color:#122377;
+ 	box-sizing:border-box;
+ 	font-size:15px;
+ 	line-height:20px;
+ 	padding-top:20px;
+ 	text-align:left;
+ 	font-family:"Avenir LT W01 55 Roman";
+ }
+ .btnComment {
+    color: #fff;
+    background: #122377;
+ }
+ .btnCancel {
+ 	width: 120px;
+    height: 34px;
+    line-height:34px;
+ }
+
+ .status {
+    position: absolute;
+    right: -6px;
+    top: -7px;
+    width: 74px;
+    z-index: 9;
+    display: none;
+    transform: rotate(90deg);
+}
+.status-img .status {
+    display: block;
+}
+.actionLightbx h2 {
+	line-height: 33px;
+    padding: 5px 0 0;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #58595b;
+    text-align: left;
+    border-bottom: 1px solid #58595b;
+}
+.approvalTitle-right {
+	float:right;
+}
+.ordersQ {
+	float:left;
+	color:#122377;
+	font-size:14px;
+	line-height:40px;
+	margin-right:10px;
+	font-family:"Avenir LT W01 55 Roman";
+}
+.ordersQ .countQueue {
+	font-family:"Avenir LT W01 85 Heavy";
+}
+footer p{
+	clear:both;
+	border-top:1px solid #6d6e70;
+	color:#6d6e70;
+	font-size:14px;
+	padding:15px;
+}
+.approvals-row h2 {
+	float:left;
+	line-height:40px;
+}
+.btn-toggle {
+	height: 35px;
+    padding-left: 5px;
+    width: 48px;
+    line-height: 40px;
+}
+.btn-toggle::after {
+	top:16px;
+}
+.portlet-placeholder {
+    border: 1px dotted black;
+    /*margin: 0 1em 1em 0;
+    height: 50px;*/
+  }
+  .newPublishSec .ui-sortable-placeholder {
+	position: relative;
+    float: left;
+    width: 220px;
+    margin:10px;
+    border: 2px dashed #77bdff;
+    transition: all 0.2s linear;
+	min-height:304px;
+}
+.gridSection .ui-sortable-placeholder {
+	 position: relative;
+    float: left;
+    width: 97px;
+    margin: 7px;
+    padding: 0;
+    cursor: pointer;
+    min-height: 165px;
+}
+.gridSection.listViewSection .ui-sortable-placeholder {
+    width: 100%;
+    margin: 0 0 -1px;
+    padding: 0;
+    cursor: pointer;
+    min-height: 77px;
+}
+.newPublishSec.listViewSection .ui-sortable-placeholder {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    min-height: 123px;
+}
+.noResults {
+    padding: 20px 0 0;
+}
+.noResults h2 {
+	font-size: 27px;
+    color: #275baf;
+    padding: 0;
+    font-family: 'avenirregular';
+}
+
+/* SelectModule */
+.selectbox,.selectboxLibrary {
+    width:100%;
+    clear: both;
+    position: relative;
+    font-family: 'avenirregular'; 
+}
+.catagorySecMain {
+    display: none;
+    position: relative;
+    margin-top: 20px;
+}
+.unitSecMain {
+    position: relative;
+}
+.catagoryPlaceholder,.unitPlaceholder,.placeholder {
+    position: relative;
+    line-height: 36px;
+    height: 36px;
+    cursor: pointer;
+    padding: 0 0 0 20px;
+    font-size: 13px;
+    color: #929497;
+    background: #f8f9fa;
+}
+.placeholder {
+	font-family: 'avenirregular';
+	font-size: 16px;
+}
+.catagoryPlaceholder:hover,.unitPlaceholder:hover,.selectboxLibrary:hover .catagoryPlaceholder,.activeLabel,.catagorySecMain:hover .catagoryPlaceholder,.unitSecMain:hover .unitPlaceholder,.placeholder:hover {
+	background: #eeeff0;
+}
+.catagoryPlaceholder::after,.unitPlaceholder::after,.placeholder::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 16px;
+    border-top: 5px solid #58595b;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+.catagoryListSec,.unitSecList,.sectionDropDown {
+    position: absolute;
+    top: 36px;
+    width: 100%;
+    display: none;
+    max-height: 170px;
+    overflow-y: auto;
+    box-shadow: 0 4px 5px rgba(88, 89, 91, 0.32);
+    background: #eeeff0;
+    z-index: 2;
+}
+.catagoryListSec {
+	top:36px;
+}
+.selectboxLibrary .catagoryListSec {
+	top:36px;
+}
+.catagoryListSec li,.unitSecList li,.sectionDropDown li {
+    position: relative;
+    line-height: 36px;
+    list-style: none;
+    padding: 0 6px 0 22px;
+    font-size: 13px;
+    cursor: pointer;
+    color: #58595b;
+}
+.catagoryListSec li.selected,.unitSecList li.selected,.catagoryListSec li:hover,.unitSecList li:hover,.sectionDropDown li {
+    background: #fff;
+    color: #58595b !important;
+}
+.catagoryListSec li.selected::before,.unitSecList li.selected::before,.sectionDropDown li::before {
+    content: '';
+    width: 9px;
+    height: 5px;
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    border: 2px solid #97dadf;
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+}
+.catagorySubSec {
+	position:relative;
+    display: none;
+    padding: 6px 20px 0;
+    background: #eeeff0;
+}
+.filterField,.searchBlock1 {
+	position:relative;
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    color: #929497;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    /* font-weight: 700; */
+    padding: 0 10px;
+    font-family: 'avenirregular';
+    background: #f8f9fa;
+}
+.searchBlock1:hover,.uploadSlideCont .searchBlock1 {
+	background:#eeeff0;
+}
+.catagorySubSec li,.FiltersSecUL li,.selectAllBtn {
+    list-style: none;
+    color: #58595b;
+    font-size: 14px;
+    padding: 0 14px; 
+}
+.catagorySubSec li label,.tabContainerSec .FiltersSecUL li label,.selectAllBtn {
+    line-height: 30px;
+    cursor: pointer;
+}
+.catagorySubSec li strong,.FiltersSecUL li strong,.selectAllBtn strong {
+    font-weight: 400;
+    position: relative;
+    padding: 0 0 0 26px;
+}
+.tabContainerSec .FiltersSecUL li label {
+	text-transform: uppercase;
+}
+ .FiltersSecUL li label {
+ 	 line-height: 20px;
+ }
+.catagorySubSec li input[type="checkbox"],.FiltersSecUL li input[type="checkbox"],.selectAllBtn input[type="checkbox"]{
+    display: none;
+}
+.catagorySubSec li strong::before,.FiltersSecUL li strong::before,.selectAllBtn strong::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 15px;
+    height: 15px;
+    background-color: #e6e6e6;
+    box-shadow: inset 0 1px 3px 0 rgba(178, 178, 178, 0.5);
+}
+.catagorySubSec li input[type="checkbox"]:checked + strong::after,.FiltersSecUL li input[type="checkbox"]:checked + strong::after,.selectAllBtn input[type="checkbox"]:checked + strong::after {
+    content: '';
+    width: 8px;
+    height: 4px;
+    position: absolute;
+    top: 4px;
+    left: 3px;
+    border: 2px solid #003da1;
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+}
+.catagorySubSec li input[type="checkbox"]:checked + strong,.FiltersSecUL li input[type="checkbox"]:checked + strong,.selectAllBtn input[type="checkbox"]:checked + strong {
+    font-weight: 700;
+    color: #003da1;
+}
+.selectAllBtn {
+	padding-left: 7px !important;
+	padding-bottom: 0 !important;
+    display: inline-block;
+    margin-top: 10px;
+    line-height: 20px !important;
+    position:relative;
+}
+.libraryContentRow1 .selectAllBtn {
+	padding-left: 6px !important;
+}
+.selectAllBtn input {
+	display:block !important;
+    opacity: 0;
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    z-index: 99;
+}
+.count {
+    float: right;
+    min-width: 37px;
+    height: 20px;
+    text-align: center;
+    color: #fff;
+    margin-top: 5px;
+    line-height: 20px;
+    border-radius: 12px;
+    background: #003da1;
+}
+.sublistDropSec {
+    margin: 10px -20px;
+    padding: 5px 12px 10px;
+    max-height: 180px;
+    overflow-y: auto;
+    background: #f9f9f9;
+}
+.checkedList {
+    clear: both;
+}
+.checkedList li {
+    float: left;
+    margin: 2px;
+    position: relative;
+    max-width: 93px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 18px;
+    padding: 1px 20px 0 8px;
+    color: #fff;
+    list-style: none;
+    overflow: hidden;
+    font-size: 13px;
+    border-radius: 15px;
+    background: #c6c7c9;
+}
+.checkedList li span {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    float: right;
+    margin: 0px 0 0 5px;
+    position: absolute;
+    text-align: center;
+    top: 1px;
+    right: 2px;
+    border-radius: 50px;
+    line-height: 15px;
+    background: #cd3c02;
+}
+.noData {
+    display: block;
+    text-align: center;
+    line-height: 36px;
+}
+.title-rowSec1 {
+	padding-bottom:4px;
+}
+.title-rowSec1 h2 {
+	float:left;
+	position: relative;
+    top: 7px;
+}
+.title-rowSec1 #btnUpld {
+	margin-left:5px;
+}
+.title-rowSec1 .btn-create {
+    margin-left: 8px;
+}
+.filterSectionBlock {
+	width: 254px;
+    float: left;
+    padding-top: 15px;
+    margin-right: 10px;
+}
+.createFilterSec  .newPublishSec {
+	width:calc(100% - 265px);
+}
+.searchBlock1 input {
+	width:100%;
+	height: 36px;
+    line-height: 36px;
+    color: #929497;
+	font-size: 13px;
+    padding:0 36px 0 0;
+    font-family: 'avenirregular';
+	border:none;
+	outline:none;
+	box-sizing:border-box;
+	background:none;
+}
+.searchBlock1 input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #929497;
+}
+.searchBlock1 input::-moz-placeholder { /* Firefox 19+ */
+  color: #929497;
+}
+.searchBlock1 input:-ms-input-placeholder { /* IE 10+ */
+  color: #929497;
+}
+.searchBlock1 input:focus {
+	color:#2d3137;
+}
+.searchBlock1 input:focus::-webkit-input-placeholder,.searchBlock1 input:focus::-moz-placeholder,.searchBlock1 input:focus::-ms-placeholder  {
+	color:#2d3137;
+}
+.searchBlock1 .fa {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor:pointer;
+    width: 36px;
+    line-height: 36px;
+    height: 36px;
+    color:#929497;
+    text-align: center;
+}
+.FiltersSecUL li {
+	padding:0;
+}
+.filterSectionBlock .label-title {
+	line-height:22px;
+	padding-top:12px;
+}
+.btn-apply {
+	float:right;
+	margin:15px -15px;
+	min-width:136px;
+	background-color: rgba(255, 255, 255, 0.05);
+    border: solid 1px #c6c7c9;
+}
+.selectboxLibrary .catagoryPlaceholder {
+	padding-left:10px;
+}
+.selectboxLibrary .catagorySubSec {
+	padding: 6px 10px 0;
+}
+.selectboxLibrary .sublistDropSec {
+    margin: 10px -10px;
+    padding: 5px 4px 10px;
+}
+.catagorySubSec .fa-search {
+	position: absolute;
+    right: 22px;
+    top: 18px;
+}
+.selectbox .catagorySubSec .fa-search {
+	right: 32px;
+}
+.quickFiltersSecCreate .FiltersSecUL {
+	margin:0 -10px;
+}
+.quickFiltersSecCreate .FiltersSecUL li {
+	padding: 0 10px;
+    float: left;
+}
+.selectboxCreate .catagorySecMain {
+	margin-top: 0;
+	clear:both;
+}
+.quickFiltersSecCreate {
+	clear:both;
+	overflow: hidden;
+}
+.btn-apply-filter-create {
+	margin:0 -15px;
+}
+.wrapper .title-row-create{
+	padding:45px 0 0;
+}
+.light-createTem  .title-row-create {
+	padding:0;
+	margin-bottom: 8px;
+}
+.titleChange h2 {
+	line-height: 40px;
+    padding: 5px;
+}
+.noMatchFilterData {
+	font-family:"Avenir LT W01 65 Medium";
+	line-height:24px;
+	font-size: 18px;
+	color: #4b4b4b;
+	padding:20px;
+}
+.noMatchFilterData h1 span {
+	display:block;
+	font-size: 14px;
+  	color: #777777;
+  	line-height:28px;
+  	padding-top:5px;
+  	font-family: 'avenirregular';
+}
+.wrap-library,.wrap-library .container-liquid {
+	overflow: inherit;
+}
+.libraryTabs {
+	float:left;
+	line-height:40px;
+}
+.libraryTabs li {
+	float:left;
+	padding:0 24px 0 0;
+	font-size:17px;
+}
+.libraryTabs li a {
+	color:#c6c7c9;
+}
+.libraryTabs .active a{
+	color:#003da1;
+}
+.tabContentSec,.tabBtnSec {
+	display:none;
+}
+.tabContentSec.active,.tabBtnSec.active {
+	display:block;
+}
+.tabSecTitle {
+	min-width: 275px;
+}
+.addBtnRow {
+	clear:both;
+	padding:15px 0 0;
+}
+.sectionItem {
+	position:relative;
+	line-height:40px;
+	margin:10px 0 30px;
+	color:#58595b;
+	font-size:14px;
+}
+.sectionItem::after{
+	content:'';
+	position:absolute;
+	height:2px;
+	width:100%;
+	top:50%;
+	left:0;
+	display:block;
+	background:#e9eaea;
+	margin:-1px 0 0;
+}
+.sectionItemName,.sectionBtns {
+	display: inline-block;
+    background: #fff;
+    position: relative;
+    z-index: 9;
+    padding: 0 6px;
+    line-height: 40px;
+}
+.sectionBtns{
+	display:none;
+	margin-left: -4px;
+	font-size: 12px;
+	color:#c6c7c9;
+}
+.sectionBtns span {
+	display:inline-block;
+	margin:0 2px;
+	cursor:pointer;
+}
+.sectionItem:hover .sectionBtns {
+	display:inline-block;
+}
+.tabContainerSec {
+	position:relative;
+}
+.fiterSecTab {
+	display:none;
+	position:absolute;
+	left:0;
+	top:15px;
+	width:254px;
+	z-index:99;
+}
+.fiterSecTab ul {
+	display:table;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    outline: none;
+    white-space: nowrap;
+    text-align: center;
+    -webkit-user-select: none;
+    font-size: 13px;
+    color: #595a5c;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-family:"Avenir LT W01 65 Medium";
+}
+.fiterSecTab ul li {
+	display:table-cell;
+	overflow: hidden;    
+	cursor: pointer;
+	width:50%;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border: solid 1px #c6c7c9;
+	line-height:35px;
+	background: rgba(255, 255, 255, 0.05);
+}
+.fiterSecTab ul li a {
+	display:block;
+	text-decoration:none;
+	color: #58595b;
+}

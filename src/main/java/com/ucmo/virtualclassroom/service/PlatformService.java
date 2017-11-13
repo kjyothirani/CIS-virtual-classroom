@@ -14,5 +14,7 @@ public interface PlatformService {
 	public Platformdiscussion savePlatformDiscussion(Platformdiscussion discussion);
 	
 	public List<Platformdiscussion> getPlatformDiscussion(Long id);
+	
+	public void deleteDiscussion(Long id); 
 
 }
