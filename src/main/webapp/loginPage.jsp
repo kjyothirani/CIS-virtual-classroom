@@ -16,7 +16,7 @@
 		<body background ="/Images/bg.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
 			<jsp:include page = "header.jsp" />
 			
-			 <c:if test = "${loginFailure == 'yes'}">
+			 <c:if test = "${loginfailure == 'yes'}">
 			 <div id="loginFailure" align="center" style="color:red"> The id and/or password is incorrect. Please provide valid credentials.</div>
 			 </c:if>
 		

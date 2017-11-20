@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 import org.springframework.stereotype.Component;
 @Configuration
 @Component
@@ -34,14 +35,20 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter  {
 		    authProvider.setUserDetailsService(userDetailsService);
 		    return authProvider;
 		}
-	
+		@Bean
+		public SimpleUrlAuthenticationFailureHandler authenticationFailureHandler() {
+			SimpleUrlAuthenticationFailureHandler failureHandler = new SimpleUrlAuthenticationFailureHandler();
+			failureHandler.setDefaultFailureUrl("/classroom/errorpage");
+			return failureHandler;
+		}
    
     
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-    	String[] PERMITTED_URLS = { "/classroom/loginPage", "/Images/**","/*css","/classroom/register","/classroom/submitRegistration","/js/**"};
+    	String[] PERMITTED_URLS = { "/classroom/loginPage",  "/classroom/errorpage","/Images/**","/*css","/classroom/register","/classroom/submitRegistration","/js/**"};
         http.authorizeRequests().antMatchers(PERMITTED_URLS).permitAll().anyRequest().authenticated().and().formLogin().loginPage("/classroom/loginPage")
-        .defaultSuccessUrl("/classroom/home").usernameParameter("studentID").passwordParameter("password");
+        .defaultSuccessUrl("/classroom/home").failureUrl("/clasroom/errorpage").failureHandler(authenticationFailureHandler())
+        .usernameParameter("studentID").passwordParameter("password");
                   // it's indicate all request will be secure
         http.csrf().disable();
     }

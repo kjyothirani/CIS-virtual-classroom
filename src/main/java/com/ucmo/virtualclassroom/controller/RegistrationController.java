@@ -87,5 +87,13 @@ public class RegistrationController {
 		}
 		return userData;
 	}
+	
+
+	@RequestMapping(value = "/classroom/errorpage", method = RequestMethod.GET)
+	public ModelAndView errorPage(@ModelAttribute("registrationform") RegistrationModel request) {
+		ModelAndView mav =new ModelAndView("loginPage");
+		mav.addObject("loginfailure", "yes");
+		return mav;
+	}
 
 }

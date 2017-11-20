@@ -17,8 +17,56 @@
 		<script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 		<script src="/js/datatable.js"></script>
 		
+		<style>
+		.table tbody tr td {text-align: center;}
+		.right {text-align: center;}
+		</style>	
+		<script type="text/javascript">
+		$(document).ready(function(){
+	
+			getData();
+	
 		
+		});
 		
+		function getData()
+		{
+		
+			   $.get({
+			         url : 'getWikiList',
+			         beforeSend : function(xhr, opts){
+			        	    $('#loadinggif').css("display","block");
+			         },
+			         success : function(res) {
+
+			        	  $('#loadinggif').css("display","none");
+			           
+			        		$('#example').dataTable({
+			   				data:res,
+			   				"columnDefs": {
+		   					    
+		   					      className: "dt-head-center"
+		   					    
+		   					  },
+			   			    	"aoColumns": [
+			   						 { "mData": "resource" , "sClass": "right" },
+			   						  { "mData": "link" , "sClass": "right" },
+			   						 { "mData": "pdf", "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+				   				            $(nTd).html("<a href='"+oData.pdf+"'>"+oData.pdf+"</a>");
+				   				        },"sClass": "right"  },
+			   						 { "mData": "date","sClass": "right" },
+			   						 { "mData": "articleName" , "sClass": "right" },
+			   						 { "mData": "studentName"  , "sClass": "right"}
+
+			   						 
+			   					]
+			   				
+			   			});
+			            
+			            }
+			      });
+		}
+		</script>
 		
 	
 	</head>
@@ -63,7 +111,7 @@
 			<br/>
 			<br/>
 			<div class="pagination">
-			<table id="example" rules="none" "border="0" rules="none">
+			<table id="example" rules="none" "border="0" rules="none" class="hover">
 				<thead>
 				<tr>
 					<th>Resource  </th>
@@ -74,21 +122,7 @@
 					<th>Student Name  </th>
 				</tr>
 				</thead>
-				<tbody>
-
-				<c:forEach items="${academicList}" var="academicList">
-				<tr>
-				
- 				<td>  ${academicList.getResource()}</td>
- 				<td>  <a href="${academicList.getLink()}">${academicList.getLink()}</a></td>
- 				<td>  <a href="${academicList.getPdf()}">${academicList.getPdf()}</a></td>
- 				<td>${academicList.getDate()}</td>
- 				<td>${academicList.getArticleName()}</td>
- 				<td>${academicList.getStudentName()}</td>
- 				</tr>
-				</c:forEach>
-				 
-				 </tbody>
+		
 				 
 				
 			</table>

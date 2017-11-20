@@ -1,6 +1,7 @@
 package com.ucmo.virtualclassroom.controller;
 
 import java.io.File;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -42,6 +43,13 @@ public class AcademicWikiController {
 		} catch (Exception e) {
 		}
 		return mv;
+	}
+	
+	@RequestMapping(value = "/classroom/getWikiList", method = RequestMethod.GET)
+	public List<AcademicWikiModel>  getWikiList() {
+	
+	
+		return service.getWikiList();
 	}
 	
 	@RequestMapping(value = "/classroom/submitUpload", method = RequestMethod.POST)
