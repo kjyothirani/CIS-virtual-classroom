@@ -24,7 +24,7 @@ import com.ucmo.virtualclassroom.service.RegistrationService;
 import com.ucmo.virtualclassroom.service.WikiService;
 import com.ucmo.virtualclassroom.utils.TestUtils;
 
-public class RegistrationControllerTest {
+public class LoginControllerTest {
 	 private MockMvc mockMvc;
 	
 	@Mock
@@ -33,7 +33,7 @@ public class RegistrationControllerTest {
 	@Mock
 	private WikiService service;
 	 @InjectMocks
-	private RegistrationController registrationController;
+	private LoginController registrationController;
 	
 	 @Before
 	    public void setup() {
@@ -46,23 +46,36 @@ public class RegistrationControllerTest {
 	    }
 	 
 	 
-	 @Test
-	    public void test_getDocuments() throws Exception {
-		  this.mockMvc.perform(get(new URI("/classroom/register/"))
-	                .contentType(MediaType.APPLICATION_JSON))
-	                .andExpect(status().is2xxSuccessful());
-	    }
+
 	 
 	 @Test
-	    public void test_submitRegistration() throws Exception {
+	    public void test_login() throws Exception {
 		 RegistrationModel request = new RegistrationModel();
 		 when(registrationService.createStudent(request)).thenReturn(true);
 
-		   this.mockMvc.perform(post("/classroom/submitRegistration").content(TestUtils.asJsonString(request))
+		   this.mockMvc.perform(get(new URI("/classroom/loginPage/"))
+	                .contentType(MediaType.APPLICATION_JSON))
+	                .andExpect(status().is2xxSuccessful());
+	    }
+	
+	 
+	 @Test
+	    public void test_validatelogin() throws Exception {
+		 RegistrationModel request = new RegistrationModel();
+		 List<AcademicWikiModel> list = new ArrayList();
+		 when(service.getWikiList()).thenReturn(list);
+
+		   this.mockMvc.perform(get(new URI("/classroom/home/"))
 	                .contentType(MediaType.APPLICATION_JSON))
 	                .andExpect(status().is2xxSuccessful());
 	    }
 	 
+	 @Test
+	    public void test_errorPage() throws Exception {
 
+		   this.mockMvc.perform(get(new URI("/classroom/errorpage/"))
+	                .contentType(MediaType.APPLICATION_JSON))
+	                .andExpect(status().is2xxSuccessful());
+	    }
 	
 }
