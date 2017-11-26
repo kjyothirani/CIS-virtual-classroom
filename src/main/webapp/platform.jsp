@@ -54,8 +54,9 @@
 		$(document).ready(function(){
 	
 			getData();
-			console.log("entered");
-	
+			var modelAttr = $("#modelAttr").val();
+			if('yes'==modelAttr)
+				  $('#newArticle').css("display","block");
 		
 		});
 		
@@ -167,6 +168,9 @@
 			<div id="loadinggif" align="center"  style="color:green;display:none" >
 				<img src="/Images/loading.gif"></img>
 			</div>	
+			<div id="newArticle" align="center" style="color:green;display:none;font-size: 30px" >
+				New article is saved successfully.
+			</div>	
 	<table id="example" class="display" cellspacing="0" width="100%">
         <thead>
             <tr>
@@ -182,7 +186,7 @@
 			<br/>
 			<div align="center"><a href="/classroom/newDiscussion" class="button">Post new question</a></div>
 		  
-			
+					<input type="hidden" id="modelAttr" name="modelAttr" value="${message}"/>
 			
 			
 					

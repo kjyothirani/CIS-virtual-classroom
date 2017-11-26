@@ -46,11 +46,25 @@ public class VirtualHuddleServiceImpl implements VirtualHuddleService {
 		// TODO Auto-generated method stub
 		return repository.getOne(id);
 	}
+	
+	@Override
+	public void  deletesubscribe(Long id) {
+		// TODO Auto-generated method stub
+		subscribeRepository.delete(id);
+	}
 
 	@Override
 	public List<Subscribe> getSubscribedHuddles(Long id) {
 		
 		return subscribeRepository.findByUserid(id);
 	}
+	
+
+	@Override
+	public List<Subscribe> findByHuddle(Long id) {
+		
+		return subscribeRepository.findByHuddleid(id);
+	}
+
 
 }

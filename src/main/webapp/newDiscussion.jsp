@@ -30,7 +30,6 @@
 			         data : $("#platformForm").serialize(),
 			         success : function(res) {
 
-				           console.log(res);
 			            if(res.success){
 			               //Set response
 			           console.log("here");

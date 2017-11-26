@@ -42,9 +42,37 @@
 			  border-collapse: collapse;
 			}
 		</style>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript">
+		function unsubscribe(id)
+		{
+			console.log("entered");
+			  $('#showMessage1').css("display","none");
+			  $('#showMessage').css("display","none");
+		    $.post({
+		         url : 'deletehuddle?id='+id,
+		         success : function(res) {
+
+			           console.log(res);
+		            if(res.success){
+		               //Set response
+		           console.log("here");
+		               var dubid ='\'#Unsubscribe'+id+'\'';
+		               console.log(dubid);
+		              $('#showMessage').css("display","block");
+		              
+		              $('#Unsubscribe'+id).css("display","none");
+		              $('#subscribe'+id).css("display","block");
+		            
+		            }else{
+		              }
+		         }
+		      });
+		}
 		function subscribe(id)
 		{
+			  $('#showMessage1').css("display","none");
+			  $('#showMessage').css("display","none");
 			console.log(id);
 		      $.post({
 			         url : 'subscribehuddle?id='+id,
@@ -56,7 +84,7 @@
 			           console.log("here");
 			               var dubid ='\'#Unsubscribe'+id+'\'';
 			               console.log(dubid);
-			              $('#showMessage').css("display","block");
+			              $('#showMessage1').css("display","block");
 			              
 			              $('#Unsubscribe'+id).css("display","block");
 			              $('#subscribe'+id).css("display","none");
@@ -80,6 +108,10 @@
 			<br/>
 		
 				<div id="showMessage" align="center" style="color:green;display:none" >
+				Unsubscribed to the huddle
+			</div>	
+			
+			<div id="showMessage1" align="center" style="color:green;display:none" >
 				Subscribed to the huddle
 			</div>		
 			<table border="1" rules="none" style="color:black" cellpadding="30" cellspacing="40">
@@ -89,7 +121,8 @@
 					<th>Date  </th>
 					<th>Huddle Description  </th>
 					<th>Huddle  Place  </th>
-					
+						<th> </th>
+							<th>  </th><th>  </th>
 				</tr>
 				</thead>
 				<tbody>
@@ -102,10 +135,10 @@
  				<td>  ${huddle.getDescription()}</td>
  				<td>${huddle.getHuddleplace()}</td>
  				<c:if test="${huddle.subscribed == true }">
-				<td><input type="submit" id="Unsubscribe" value="Unsubscribe" onclick="subscribe( ${huddle.getId()})"  /></td>
+				<td><input type="submit" id="Unsubscribe${huddle.getId()}" value="Unsubscribe" onclick="unsubscribe( ${huddle.getId()})"  /></td>
 				
 				</c:if>
-				<td><input type="submit" id="Unsubscribe${huddle.getId()}" style="display:none" value="Unsubscribe" onclick="subscribe( ${huddle.getId()})"  /></td>
+				<td><input type="submit" id="Unsubscribe${huddle.getId()}" style="display:none" value="Unsubscribe" onclick="unsubscribe( ${huddle.getId()})"  /></td>
 				<c:if test="${huddle.subscribed == false }">
 				<td><input type="submit" id="subscribe${huddle.getId()}" value="Subscribe" onclick="subscribe( ${huddle.getId()})"  /></td>
 				</c:if>

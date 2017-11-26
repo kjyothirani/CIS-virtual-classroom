@@ -108,7 +108,6 @@ public class PlatformController {
 		} catch (Exception e) {
 			response.setSuccess(false);
 		}
-		response.setSuccess(false);
 		return response;
 		
 	}

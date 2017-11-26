@@ -14,5 +14,8 @@ public interface VirtualHuddleService {
 	
 	public boolean subscribeHuddle(Subscribe model);
 	public VirtualHuddleModel getHuddle(Long id);
+	
+	public void  deletesubscribe(Long id) ;
+	public List<Subscribe> findByHuddle(Long id) ;
 
 }
