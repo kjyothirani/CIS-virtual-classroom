@@ -25,7 +25,9 @@
 		$(document).ready(function(){
 	
 			getData();
-	
+			var modelAttr = $("#modelAttr").val();
+			if('yes'==modelAttr)
+				  $('#showMessage').css("display","block");
 		
 		});
 		
@@ -49,13 +51,13 @@
 		   					    
 		   					  },
 			   			    	"aoColumns": [
+			   			    	 { "mData": "articleName" , "sClass": "right" },
 			   						 { "mData": "resource" , "sClass": "right" },
-			   						  { "mData": "link" , "sClass": "right" },
 			   						 { "mData": "pdf", "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 				   				            $(nTd).html("<a href='"+oData.pdf+"'>"+oData.pdf+"</a>");
 				   				        },"sClass": "right"  },
 			   						 { "mData": "date","sClass": "right" },
-			   						 { "mData": "articleName" , "sClass": "right" },
+			   					
 			   						 { "mData": "studentName"  , "sClass": "right"}
 
 			   						 
@@ -110,15 +112,19 @@
 			
 			<br/>
 			<br/>
+			
+				<div id="showMessage" align="center" style="color:green;display:none;font-size: 30px" >
+				New article is saved successfully.
+			</div>	
 			<div class="pagination">
 			<table id="example" rules="none" "border="0" rules="none" class="hover">
 				<thead>
 				<tr>
+				<th>Article Name  </th>
 					<th>Resource  </th>
-					<th>Link  </th>
 					<th>PDF  </th>
 					<th>Uploaded Date  </th>
-					<th>Article Name  </th>
+					
 					<th>Student Name  </th>
 				</tr>
 				</thead>
@@ -133,7 +139,7 @@
 			
 			<div align="center"><a href="/classroom/upload" class="button">Upload New</a></div>
 		  
-			
+			<input type="hidden" id="modelAttr" name="modelAttr" value="${message}"/>
 			
 			
 					

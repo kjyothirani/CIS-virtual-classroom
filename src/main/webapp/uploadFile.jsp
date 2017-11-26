@@ -12,7 +12,18 @@
 		<script type="text/javascript">
 	
 		</script>
-		
+	<style>
+	.greenbutton {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+	</style>	
 		
 	</head>
 		
@@ -26,18 +37,20 @@
 	<form:form method="POST" action="/classroom/submitUpload" modelAttribute="uploadform" name="uploadform" id="uploadform" enctype="multipart/form-data">
 		<div>
 			<table align="center" style="color:black">
+			
 				<tr>
-					<td><h3 style="color: black">Resource</h3>
+					<td><h3 style="color: black">Article Name:</h3>
+					<td>
+					<td><form:input type="text" name="articleName" path="articleName" />
+					<td>
+				</tr>
+				<tr>
+					<td><h3 style="color: black">Resource description</h3>
 					<td>
 					<td><form:input type="text" name="resource" path="resource"/>
 					<td>
 				</tr>
-				<tr>
-					<td><h3 style="color: black">Link</h3>
-					<td>
-					<td><form:input type="text" name="link" path="link" />
-					<td>
-				</tr>
+			
 
 				
 				<tr>
@@ -47,27 +60,18 @@
 					<td>
 				</tr>
 				
-			
-				
 				
 				<tr>
-					<td><h3 style="color: black">Article Name:</h3>
+					<td><h3 style="color: black">Student name:</h3>
 					<td>
-					<td><form:input type="text" name="articleName" path="articleName" />
-					<td>
-				</tr>
-				
-				<tr>
-					<td><h3 style="color: black">Student Name:</h3>
-					<td>
-					<td><form:input type="text" name="studentName" path="studentName" />
+					<td><form:input type="text" name="studentName" path="studentName"  disabled="true"/>
 					<td>
 				</tr>
 
 
 				
 				<tr>
-					<td><input type="submit" id="submitButton" value="Upload"  /></td>
+					<td><input type="submit" id="submitButton" value="Upload" class="greenbutton" /></td>
 				</tr>
 			</table>
 			
