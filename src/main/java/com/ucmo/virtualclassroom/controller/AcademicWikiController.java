@@ -1,15 +1,23 @@
 package com.ucmo.virtualclassroom.controller;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -70,11 +78,13 @@ public class AcademicWikiController {
 			AcademicWikiModel model = new AcademicWikiModel();
 			File f = new File(env.getProperty("temp.file.location")+request.getPdf().getOriginalFilename());
 			request.getPdf().transferTo(f);
+			MyUserPrincipal principal = UCMUtils.getUser();
 			model.setArticleName(request.getArticleName());
-			model.setPdf(f.getAbsolutePath());
+			model.setPdf(request.getPdf().getOriginalFilename());
 			model.setResource(request.getResource());
-			model.setStudentName(request.getStudentName());
+			model.setStudentName(principal.getFirstname() +" "+principal.getLastname());
 			model.setDate(dateStr);
+			model.setSubject(request.getSubject());
 			boolean success =service.saveWiki(model);
 			response.setSuccess(success);
 		} catch (Exception e) {
@@ -88,6 +98,17 @@ public class AcademicWikiController {
 		return mav;
 	}
 	
-	
+	@RequestMapping(value = "/classroom/download", method = RequestMethod.GET)
+	public ResponseEntity<InputStreamResource>  download(@RequestParam("file") String file) throws FileNotFoundException {
+		File f = new File(env.getProperty("temp.file.location")+file);
+		HttpHeaders header = new HttpHeaders();
+	    header.setContentType(MediaType.APPLICATION_PDF);
+	    header.set(HttpHeaders.CONTENT_DISPOSITION,
+	                   "attachment; filename=" + file.replace(" ", "_"));
+	    header.setContentLength(f.length());
+	    InputStreamResource isr = new InputStreamResource(new FileInputStream(f));
+	    return new ResponseEntity<InputStreamResource>(isr, header, HttpStatus.OK);
+		
+	}
 
 }

@@ -10,7 +10,7 @@ public class AcademicWikiForm {
 	public String date;
 	public String articleName;
 	public String studentName;
-	
+	public String subject;
 	
 	public String getResource() {
 		return resource;
@@ -48,6 +48,12 @@ public class AcademicWikiForm {
 	}
 	public void setPdf(MultipartFile pdf) {
 		this.pdf = pdf;
+	}
+	public String getSubject() {
+		return subject;
+	}
+	public void setSubject(String subject) {
+		this.subject = subject;
 	}
 	
 

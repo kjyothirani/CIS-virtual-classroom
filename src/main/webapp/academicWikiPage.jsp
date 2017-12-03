@@ -54,7 +54,7 @@
 			   			    	 { "mData": "articleName" , "sClass": "right" },
 			   						 { "mData": "resource" , "sClass": "right" },
 			   						 { "mData": "pdf", "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-				   				            $(nTd).html("<a href='"+oData.pdf+"'>"+oData.pdf+"</a>");
+				   				            $(nTd).html("<a target=\"_blank\" href='/classroom/download?file="+oData.pdf+"'>"+oData.pdf+"</a>");
 				   				        },"sClass": "right"  },
 			   						 { "mData": "date","sClass": "right" },
 			   					
