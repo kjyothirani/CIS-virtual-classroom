@@ -19,7 +19,7 @@
 			      e.preventDefault();
 			      //Remove all errors
 			      $('input').next().remove();
-			      window.location = 'getWikiList?subject='+modelAttr;
+			      window.location = 'submitsubject?subject='+modelAttr;
 			   });
 		});
 		</script>
@@ -43,8 +43,8 @@
 								<option value="Client side Internet Resources">Client side Internet Resources</option>
 						</select></td>
 					</tr>
-					
+					<tr><td><input type="submit"  id="submitButton1"  value="Proceed to view" class="button"  /></td></tr>
 				</table>
-				<input type="submit"  id="submitButton1" style="margin-right:150px;" value="Reply your Question" class="button"  />
+				
 	</body>	
 </html>

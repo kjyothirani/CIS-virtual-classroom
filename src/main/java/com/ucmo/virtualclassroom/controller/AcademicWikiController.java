@@ -51,11 +51,12 @@ public class AcademicWikiController {
 	}
 	
 	@RequestMapping(value = "/classroom/submitsubject", method = RequestMethod.GET)
-	public ModelAndView  submitsubject() {
+	public ModelAndView  submitsubject(@RequestParam("subject") String subject) {
 		ModelAndView mav = new ModelAndView("academicWikiPage");
 		MyUserPrincipal principal = UCMUtils.getUser();
 		AcademicWikiModel model = new AcademicWikiModel();
 		model.setStudentName(principal.getFirstname() +" "+principal.getLastname());
+		mav.addObject("subject", subject);
 		return mav;
 	}
 	
@@ -108,9 +109,9 @@ public class AcademicWikiController {
 		}
 		ModelAndView mav =null;
 		mav=new ModelAndView("academicWikiPage");
-		mav.addObject("academicList", service.getWikiList());
-		
+		mav.addObject("academicList", service.getwikilistBySubject(request.getSubject()));
 		mav.addObject("message", "yes");
+		mav.addObject("subject", request.getSubject());
 		return mav;
 	}
 	

@@ -25,7 +25,7 @@
 		$(document).ready(function(){
 	
 			getData();
-			var modelAttr = $("#modelAttr").val();
+			var modelAttr = $("#modelAttr").val();subject
 			if('yes'==modelAttr)
 				  $('#showMessage').css("display","block");
 		
@@ -33,9 +33,9 @@
 		
 		function getData()
 		{
-		
+			var subject = $("#subject").val();
 			   $.get({
-			         url : 'getWikiList',
+			         url : 'getWikiList?subject='+subject,
 			         beforeSend : function(xhr, opts){
 			        	    $('#loadinggif').css("display","block");
 			         },
@@ -142,6 +142,7 @@
 			<div align="center"><a href="/classroom/upload" class="button">Upload New</a></div>
 		  
 			<input type="hidden" id="modelAttr" name="modelAttr" value="${message}"/>
+			<input type="hidden" id="subject" name="subject" value="${subject}"/>
 			
 			
 					

@@ -36,8 +36,8 @@ public class LoginController {
 	public ModelAndView  validatelogin() {
 		ModelAndView mv;
 		try {
-			mv=new ModelAndView("academicWikiPage");
-			mv.addObject("academicList", service.getWikiList());
+			mv=new ModelAndView("academicwikisubject");
+			//mv.addObject("academicList", service.getWikiList());
 			return mv;
 		} catch (Exception e) {
 		}
