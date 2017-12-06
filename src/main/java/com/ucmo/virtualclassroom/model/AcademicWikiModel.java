@@ -5,9 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
+//@NamedQuery(name = "AcademicWikiModel.findBySubject", query = "SELECT * FROM academicwiki WHERE subject=''")
 @Table(name="academicwiki")
 public class AcademicWikiModel {
 	

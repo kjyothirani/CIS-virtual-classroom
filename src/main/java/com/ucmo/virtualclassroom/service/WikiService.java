@@ -10,4 +10,6 @@ public interface WikiService {
 	
 	public List<AcademicWikiModel> getWikiList( );
 
+	public List<AcademicWikiModel> getwikilistBySubject(String subject);
+
 }

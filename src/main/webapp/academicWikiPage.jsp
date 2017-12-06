@@ -73,7 +73,7 @@
 	
 	</head>
 		
-		<body  style="background-repeat:no-repeat; background-size: 1600px 800px;">
+		<body background ="/Images/bg.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
 		
 		
 		
@@ -102,7 +102,7 @@
 					
 					
 					<li class="dropdown">
-						<a href="contacts.html" class="dropbtn">Virtual Huddle</a>
+						<a href="virtualhuddle" class="dropbtn">Virtual Huddle</a>
 						
 					</li>
 					
@@ -112,6 +112,8 @@
 			
 			<br/>
 			<br/>
+			
+		
 			
 				<div id="showMessage" align="center" style="color:green;display:none;font-size: 30px" >
 				New article is saved successfully.

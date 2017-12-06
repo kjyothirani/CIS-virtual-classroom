@@ -63,11 +63,10 @@
 					<tr>
 					<td><h3 style="color: black">Subject:</h3></td><td>
 					<td><form:select path="subject">
-					<form:option value="Java"></form:option>
-					<form:option value=".Net"></form:option>
-					<form:option value="Client Souce"></form:option>
-					<form:option value="Internet for Enterprise"></form:option>
+					<form:option value="Advance Java"></form:option>
+					<form:option value="Legal Environment System"></form:option>
 					<form:option value="Software Engineering"></form:option>
+					<form:option value="Client side Internet Resources"></form:option>
 					</form:select>
 					<td>
 				</tr>

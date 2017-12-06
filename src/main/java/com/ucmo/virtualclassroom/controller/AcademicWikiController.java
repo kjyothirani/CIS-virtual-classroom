@@ -14,7 +14,9 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -47,25 +49,39 @@ public class AcademicWikiController {
 		mav.addObject("uploadform",model);
 		return mav;
 	}
+	
+	@RequestMapping(value = "/classroom/submitsubject", method = RequestMethod.GET)
+	public ModelAndView  submitsubject() {
+		ModelAndView mav = new ModelAndView("academicWikiPage");
+		MyUserPrincipal principal = UCMUtils.getUser();
+		AcademicWikiModel model = new AcademicWikiModel();
+		model.setStudentName(principal.getFirstname() +" "+principal.getLastname());
+		return mav;
+	}
+	
 	@RequestMapping(value = "/classroom/academicWiki", method = RequestMethod.GET)
 	public ModelAndView  validatelogin(@ModelAttribute("loginform") LoginModel request) {
 	
 		ModelAndView mv =null;
 		try {
-			mv=new ModelAndView("academicWikiPage");
-			mv.addObject("academicList", service.getWikiList());
+			mv=new ModelAndView("academicwikisubject");
+			//mv.addObject("academicList", service.getWikiList());
 			return mv;
 		} catch (Exception e) {
 		}
 		return mv;
 	}
 	
+	
 	@RequestMapping(value = "/classroom/getWikiList", method = RequestMethod.GET)
-	public List<AcademicWikiModel>  getWikiList() {
+	public List<AcademicWikiModel>  getWikiList(@RequestParam("subject") String subject) {
 	
-	
-		return service.getWikiList();
+		List<AcademicWikiModel> wikilist = service.getwikilistBySubject(subject);
+	   // model.addAttribute("books", bookListByCategory);
+		return wikilist;
 	}
+	
+	
 	
 	@RequestMapping(value = "/classroom/submitUpload", method = RequestMethod.POST)
 	public ModelAndView  submitUpload(@ModelAttribute AcademicWikiForm request) {

@@ -30,4 +30,14 @@ public class WikiServiceImpl implements WikiService {
 				return null;
 	}
 
+	@Override
+	public List<AcademicWikiModel> getwikilistBySubject(String subject) {
+		// TODO Auto-generated method stub
+		List<AcademicWikiModel> model =repository.findBySubject(subject);
+		if(model!=null)
+			return model;
+			else
+				return null;
+	}
+
 }

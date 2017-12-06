@@ -11,6 +11,10 @@
 	
 		<title>Home Page</title>
 		<link rel="stylesheet" href="/homepage.css">
+		<link rel="stylesheet" href="http://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+		<script src="/js/datatable.js"></script>
 
 		<style>
 			.button {
@@ -44,6 +48,9 @@
 		</style>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript">
+		$(document).ready(function(){
+		    $("#tablehuddle").DataTable();
+		});
 		function unsubscribe(id)
 		{
 			console.log("entered");
@@ -114,7 +121,7 @@
 			<div id="showMessage1" align="center" style="color:green;display:none" >
 				Subscribed to the huddle
 			</div>		
-			<table border="1" rules="none" style="color:black" cellpadding="30" cellspacing="40">
+			<table id="tablehuddle" border="1" rules="none" style="color:black" cellpadding="30" cellspacing="40">
 				<thead>
 				<tr class="border_bottom">
 					<th>Huddle Name  </th>

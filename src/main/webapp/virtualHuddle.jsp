@@ -51,7 +51,7 @@
 		</script>
 	</head>
 		
-		<body background ="/Images/bg.png" style="background-repeat:no-repeat; background-size: 1600px 800px;">
+		<body background ="/Images/bg.png" style="background-repeat:repeat-x; ">
 		<jsp:include page = "header.jsp" />
 			
 		
