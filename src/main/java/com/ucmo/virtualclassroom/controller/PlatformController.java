@@ -44,7 +44,15 @@ public class PlatformController {
 	@RequestMapping(value = "/classroom/platformdata", method = RequestMethod.GET)
 	public  List<PlatformModel>  displayPlatformData() {
 	 ObjectMapper mapper = new ObjectMapper();
+	 MyUserPrincipal principal = UCMUtils.getUser();
 		return platformService.getAll();
+	}
+	
+	@RequestMapping(value = "/classroom/getuser", method = RequestMethod.GET)
+	public  String  getUser() {
+	 ObjectMapper mapper = new ObjectMapper();
+	 MyUserPrincipal principal = UCMUtils.getUser();
+		return principal.getUsername();
 	}
 	
 	@RequestMapping(value = "/classroom/newDiscussion", method = RequestMethod.GET)

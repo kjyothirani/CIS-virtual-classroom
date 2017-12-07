@@ -62,6 +62,16 @@
 		
 		function getData()
 		{
+			 $.get({
+		         url : 'getuser',
+		         beforeSend : function(xhr, opts){
+		        	    $('#loadinggif').css("display","block");
+		         },
+		         success : function(res) {
+		        	 userName=res;
+		        	 console.log(userName);
+		         }
+		});
 			
 		
 		      $.get({
@@ -82,8 +92,10 @@
 			   						  { "mData": "username" },
 			   						  { "mData": "tags" },
 			   						 { "mData": "id" , "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+			   							 if(oData.username == userName)
+			   								 {
 		$(nTd).html("<a href=\"javascript:void(0);\" ><img onclick=\"deleteDiscussion("+oData.id+")\" src=\"/Images/delete-button.png\" style=\"height: 25px; width: 25px;\"> </a>"
-				   		 				 );}}
+				   		 				 );}}}
 			   						 
 			   					]
 			   			});
