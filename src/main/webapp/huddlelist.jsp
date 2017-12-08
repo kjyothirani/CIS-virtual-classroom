@@ -137,7 +137,7 @@
 				<c:forEach items="${huddlelist}" var="huddle">
 				<tr class="border_bottom">
 				
- 				<td>  ${huddle.getHuddlename()}</td>
+ 				<td> <a href="/classroom/huddleusers?id=${huddle.getId()}"> ${huddle.getHuddlename()}</a></td>
  				<td> ${huddle.getSelectdate()}</td>
  				<td>  ${huddle.getDescription()}</td>
  				<td>${huddle.getHuddleplace()}</td>

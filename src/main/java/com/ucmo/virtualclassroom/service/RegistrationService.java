@@ -7,5 +7,7 @@ public interface RegistrationService {
 	public boolean  createStudent(RegistrationModel model);
 	
 	public boolean  validateLogin(RegistrationModel model);
+	
+	public RegistrationModel  getUser(Long id);
 
 }

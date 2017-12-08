@@ -1,5 +1,6 @@
 package com.ucmo.virtualclassroom.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +11,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ucmo.virtualclassroom.model.LoginModel;
+import com.ucmo.virtualclassroom.model.RegistrationModel;
 import com.ucmo.virtualclassroom.model.Subscribe;
 import com.ucmo.virtualclassroom.model.Success;
 import com.ucmo.virtualclassroom.model.VirtualHuddleModel;
+import com.ucmo.virtualclassroom.service.RegistrationService;
 import com.ucmo.virtualclassroom.service.VirtualHuddleService;
 import com.ucmo.virtualclassroom.utils.UCMUtils;
 
@@ -21,6 +25,9 @@ public class VirtualHuddleController {
 
 	@Autowired
 	VirtualHuddleService service;
+	
+	@Autowired
+	private RegistrationService registrationService;
 
 	@RequestMapping(value = "/classroom/virtualhuddle", method = RequestMethod.GET)
 	public ModelAndView getVirtualHuddle() {
@@ -92,5 +99,32 @@ public class VirtualHuddleController {
 			response.setSuccess(false);
 		}
 		return response;
+	}
+	
+	@RequestMapping(value = "/classroom/getsubscription", method = RequestMethod.GET)
+	public List<RegistrationModel>  getsubscription(@RequestParam("id") String id) {
+	
+		List<Subscribe> huddle	=service.findByHuddle(Long.parseLong(id));
+		List<RegistrationModel> modelList = new ArrayList<RegistrationModel>();
+		for(Subscribe subscribe: huddle)
+		{
+			
+			modelList.add(registrationService.getUser(subscribe.getUserid()));
+		}
+		return modelList;
+	}
+	
+	@RequestMapping(value = "/classroom/huddleusers", method = RequestMethod.GET)
+	public ModelAndView  validatelogin(@RequestParam("id") Long id) {
+	
+		ModelAndView mv =null;
+		try {
+			mv=new ModelAndView("huddleusers");
+			mv.addObject("id", id);
+			mv.addObject("huddlename",service.getHuddle(id).getHuddlename());
+			return mv;
+		} catch (Exception e) {
+		}
+		return mv;
 	}
 	}

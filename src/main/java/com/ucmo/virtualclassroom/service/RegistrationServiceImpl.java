@@ -29,4 +29,10 @@ public class RegistrationServiceImpl implements RegistrationService {
 			return false;
 	}
 
+	@Override
+	public RegistrationModel getUser(Long id) {
+		// TODO Auto-generated method stub
+		return registrationRepository.findById(id);
+	}
+
 }
